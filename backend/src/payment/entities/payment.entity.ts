@@ -1,22 +1,27 @@
-import { type } from 'node:os';
-import { Order } from 'src/order/entities/order.entity';
-import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from "typeorm";
+import { UseGuards } from '@nestjs/common';
+import { UserEntity } from 'src/auth/entities/user.entity';
+import { JwtAuthGuard } from 'src/auth/jwt.guard';
+import { JwtStrategy } from 'src/auth/jwt.strategy';
+import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn, JoinTable } from 'typeorm';
 
-@Entity({ name: 'payment' })
+@Entity({name:'payment'})
+@UseGuards(JwtAuthGuard)
+@UseGuards(JwtStrategy)
 export class Payment {
     @PrimaryGeneratedColumn()
-    paymentId: number;
+    paymentId:number;
 
-    @Column({ nullable: false })
-    paymentAmount: number;
+    @Column({default:'false',nullable:false})
+    paymentStatus:string;
 
-    @Column({ type: "datetime", default: () => 'CURRENT_TIMESTAMP' })
-    paymentDate: Date;
+    @Column({nullable:false})
+    paymentAmount:number;
 
-    @Column({ default: 'pending' })
-    paymentStatus: string;
+    @Column({default:"credit-card",nullable:false})
+    paymentMethod:string;
 
-    @OneToMany(() => Order, (order) => order.orderId)
-    order: Order[];
+    @ManyToOne(()=>UserEntity,(user)=>user.userId)
+    @JoinColumn({name:'userId'})
+    userId:UserEntity;
 
 }
