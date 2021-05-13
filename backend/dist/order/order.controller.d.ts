@@ -6,11 +6,13 @@ export declare class OrderController {
     constructor(orderService: OrderService);
     create(req: any, createOrderDto: CreateOrderDto): Promise<{
         orderAmount: number;
-        orderShippingDate: number;
-        user: import("../auth/entities/user.entity").UserEntity;
+        shippingDate: string;
+        orderStatus: string;
+        userId: import("../auth/entities/user.entity").UserEntity;
+        productId: import("../product/entities/product.entity").Product;
     } & import("./entities/order.entity").Order>;
-    findAll(): Promise<import("./entities/order.entity").Order[]>;
-    findOne(id: string): void;
+    findAll(req: any): Promise<import("./entities/order.entity").Order[]>;
+    findOne(id: string): Promise<import("./entities/order.entity").Order>;
     update(id: string, updateOrderDto: UpdateOrderDto): Promise<import("typeorm").UpdateResult>;
     remove(id: string): Promise<import("typeorm").DeleteResult>;
 }

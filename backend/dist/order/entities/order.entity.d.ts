@@ -1,13 +1,15 @@
-import { UserEntity } from 'src/auth/entities/user.entity';
-import { Payment } from 'src/payment/entities/payment.entity';
-import { Product } from 'src/product/entities/product.entity';
+import { Product } from './../../product/entities/product.entity';
+import { UserEntity } from "src/auth/entities/user.entity";
+import { OrderDetail } from "src/order-details/entities/order-detail.entity";
+import { Payment } from "src/payment/entities/payment.entity";
 export declare class Order {
     orderId: number;
     orderAmount: number;
     orderDate: Date;
-    orderShippingDate: Date;
+    shippingDate: string;
     orderStatus: string;
-    user: UserEntity;
-    payment: Payment;
-    product: Product[];
+    userId: UserEntity;
+    productId: Product;
+    orderDetailId: OrderDetail[];
+    paymentId: Payment[];
 }

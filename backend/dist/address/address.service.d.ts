@@ -16,7 +16,7 @@ export declare class AddressService {
         user: import("../auth/entities/user.entity").UserEntity;
         createdAt: string;
     } & Address>;
-    findAll(): Promise<Address[]>;
+    findAll(userId: any): Promise<Address[]>;
     findOne(id: number): Promise<Address>;
     update(id: number, updateAddressDto: UpdateAddressDto): Promise<import("typeorm").UpdateResult>;
     remove(id: number): Promise<import("typeorm").DeleteResult>;

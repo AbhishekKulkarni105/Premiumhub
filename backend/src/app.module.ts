@@ -5,6 +5,9 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { ProductModule } from './product/product.module';
 import { AuthModule } from './auth/auth.module';
 import { AddressModule } from './address/address.module';
+import { OrderModule } from './order/order.module';
+import { OrderDetailsModule } from './order-details/order-details.module';
+import { PaymentModule } from './payment/payment.module';
 
 @Module({
   imports: [
@@ -13,6 +16,9 @@ import { AddressModule } from './address/address.module';
     ProductModule,
     AuthModule,
     AddressModule,
+    OrderModule,
+    OrderDetailsModule,
+    PaymentModule,
   ],
   controllers: [
     // register the controller

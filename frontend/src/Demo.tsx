@@ -1,5 +1,7 @@
+import classes from "./Demo.module.css";
 import React from "react";
 import Column from "./components/Column";
+import { Button } from "@material-ui/core";
 
 type State = { no: number; count: number };
 class Demo extends React.Component<{}, State> {
@@ -12,12 +14,33 @@ class Demo extends React.Component<{}, State> {
   }
   render() {
     console.log("RENDER CALLED", this.state);
-    const name = "Mike";
+    const name = "PREMIUMHUB";
     return (
       <div className="row">
         <Column size={12}>
-          <h1>Demo Component</h1>
-          <p>Some html content</p>
+          
+        
+        <div className={classes.banner}>
+
+      <p className={classes.para}> WELCOME TO PREMIUMHUB </p>
+     <p className={classes.para}> Comming Soon....</p>
+      <button className={classes.btn}><a href="https://premiumhub.site" >Get Started</a></button>
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
           {this.state.count > 6 ? <p>Hello from {name.toUpperCase()}</p> : null}
           <p>{7 + 3}</p>
           <button

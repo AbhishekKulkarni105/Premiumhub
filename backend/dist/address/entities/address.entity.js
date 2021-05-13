@@ -35,7 +35,7 @@ __decorate([
     __metadata("design:type", String)
 ], Address.prototype, "state", void 0);
 __decorate([
-    typeorm_1.Column({ type: 'integer' }),
+    typeorm_1.Column({ precision: 6 }),
     __metadata("design:type", Number)
 ], Address.prototype, "pincode", void 0);
 __decorate([

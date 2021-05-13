@@ -19,6 +19,7 @@ export interface ProductResponseType {
   data: ProductType[];
   currentPage: number;
   totalPages: number;
+  
 }
 
 export type MenuType = {

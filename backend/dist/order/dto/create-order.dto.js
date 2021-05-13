@@ -14,16 +14,24 @@ const swagger_1 = require("@nestjs/swagger");
 class CreateOrderDto {
 }
 __decorate([
-    swagger_1.ApiProperty({ example: 'product name' }),
+    swagger_1.ApiProperty(),
     __metadata("design:type", Number)
 ], CreateOrderDto.prototype, "amount", void 0);
 __decorate([
     swagger_1.ApiProperty(),
-    __metadata("design:type", Number)
-], CreateOrderDto.prototype, "OSDate", void 0);
+    __metadata("design:type", String)
+], CreateOrderDto.prototype, "sDate", void 0);
 __decorate([
     swagger_1.ApiProperty(),
     __metadata("design:type", String)
-], CreateOrderDto.prototype, "user", void 0);
+], CreateOrderDto.prototype, "status", void 0);
+__decorate([
+    swagger_1.ApiProperty(),
+    __metadata("design:type", String)
+], CreateOrderDto.prototype, "userId", void 0);
+__decorate([
+    swagger_1.ApiProperty(),
+    __metadata("design:type", Number)
+], CreateOrderDto.prototype, "productId", void 0);
 exports.CreateOrderDto = CreateOrderDto;
 //# sourceMappingURL=create-order.dto.js.map

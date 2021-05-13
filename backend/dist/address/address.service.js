@@ -36,8 +36,9 @@ let AddressService = class AddressService {
             createdAt: new Date().toISOString(),
         });
     }
-    findAll() {
-        return this.addressRepository.find();
+    async findAll(userId) {
+        const user = await this.userService.findById(userId);
+        return this.addressRepository.find({ where: { user } });
     }
     async findOne(id) {
         return this.addressRepository.findOne(id).then((data) => {

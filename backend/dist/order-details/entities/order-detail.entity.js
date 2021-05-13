@@ -10,42 +10,39 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.OrderDetail = void 0;
+const user_entity_1 = require("../../auth/entities/user.entity");
 const order_entity_1 = require("../../order/entities/order.entity");
+const product_entity_1 = require("../../product/entities/product.entity");
 const typeorm_1 = require("typeorm");
 let OrderDetail = class OrderDetail {
 };
 __decorate([
     typeorm_1.PrimaryGeneratedColumn(),
     __metadata("design:type", Number)
+], OrderDetail.prototype, "orderDetailId", void 0);
+__decorate([
+    typeorm_1.Column({ type: 'decimal', precision: 10 }),
+    __metadata("design:type", Number)
+], OrderDetail.prototype, "orderAmount", void 0);
+__decorate([
+    typeorm_1.Column({ type: 'integer' }),
+    __metadata("design:type", Number)
+], OrderDetail.prototype, "orderQty", void 0);
+__decorate([
+    typeorm_1.ManyToOne(() => order_entity_1.Order, (order) => order.orderId),
+    typeorm_1.JoinColumn({ name: 'orderId' }),
+    __metadata("design:type", order_entity_1.Order)
 ], OrderDetail.prototype, "orderId", void 0);
 __decorate([
-    typeorm_1.Column({ default: '0' }),
-    __metadata("design:type", Number)
+    typeorm_1.ManyToOne(() => product_entity_1.Product, (product) => product.productId),
+    typeorm_1.JoinColumn({ name: 'productId' }),
+    __metadata("design:type", product_entity_1.Product)
 ], OrderDetail.prototype, "productId", void 0);
 __decorate([
-    typeorm_1.Column({ default: '10' }),
-    __metadata("design:type", Number)
-], OrderDetail.prototype, "quantity", void 0);
-__decorate([
-    typeorm_1.Column({ type: "datetime", default: () => 'CURRENT_TIMESTAMP' }),
-    __metadata("design:type", Date)
-], OrderDetail.prototype, "orderDate", void 0);
-__decorate([
-    typeorm_1.Column({ type: 'datetime' }),
-    __metadata("design:type", Number)
-], OrderDetail.prototype, "orderShippingDate", void 0);
-__decorate([
-    typeorm_1.Column({ default: 10, type: 'decimal', precision: 2 }),
-    __metadata("design:type", Number)
-], OrderDetail.prototype, "totalAmount", void 0);
-__decorate([
-    typeorm_1.Column({ default: 'pending' }),
-    __metadata("design:type", String)
-], OrderDetail.prototype, "orderStatus", void 0);
-__decorate([
-    typeorm_1.OneToMany(() => order_entity_1.Order, (order) => order.orderId),
-    __metadata("design:type", Array)
-], OrderDetail.prototype, "order", void 0);
+    typeorm_1.ManyToOne(() => user_entity_1.UserEntity, (userEntity) => userEntity.userId),
+    typeorm_1.JoinColumn({ name: 'userId' }),
+    __metadata("design:type", user_entity_1.UserEntity)
+], OrderDetail.prototype, "userId", void 0);
 OrderDetail = __decorate([
     typeorm_1.Entity({ name: 'orderdetails' })
 ], OrderDetail);

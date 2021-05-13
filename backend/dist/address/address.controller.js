@@ -26,8 +26,8 @@ let AddressController = class AddressController {
     create(req, createAddressDto) {
         return this.addressService.create(req.user.userId, createAddressDto);
     }
-    findAll() {
-        return this.addressService.findAll();
+    findAll(req) {
+        return this.addressService.findAll(req.user.userId);
     }
     findOne(id) {
         return this.addressService.findOne(+id);
@@ -40,6 +40,8 @@ let AddressController = class AddressController {
     }
 };
 __decorate([
+    swagger_1.ApiNotFoundResponse({ description: 'No data is Created...  😿' }),
+    swagger_1.ApiOkResponse({ description: 'Adress Data Created for ID... 😺' }),
     common_1.Post(),
     __param(0, common_1.Request()), __param(1, common_1.Body()),
     __metadata("design:type", Function),
@@ -47,12 +49,17 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], AddressController.prototype, "create", null);
 __decorate([
+    swagger_1.ApiNotFoundResponse({ description: 'No data is Found...  😿' }),
+    swagger_1.ApiOkResponse({ description: 'All Adress Data Found... 😺' }),
     common_1.Get(),
+    __param(0, common_1.Request()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", []),
+    __metadata("design:paramtypes", [Object]),
     __metadata("design:returntype", void 0)
 ], AddressController.prototype, "findAll", null);
 __decorate([
+    swagger_1.ApiNotFoundResponse({ description: 'No data is Found...  😿' }),
+    swagger_1.ApiOkResponse({ description: 'Adress Data Found for ID... 😺' }),
     common_1.Get(':id'),
     __param(0, common_1.Param('id')),
     __metadata("design:type", Function),
@@ -60,6 +67,8 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], AddressController.prototype, "findOne", null);
 __decorate([
+    swagger_1.ApiNotFoundResponse({ description: 'No data is Updated...  😿' }),
+    swagger_1.ApiOkResponse({ description: 'Adress Data Updated for ID... 😺' }),
     swagger_1.ApiBody({ type: create_address_dto_1.CreateAddressDto }),
     common_1.Patch(':id'),
     __param(0, common_1.Param('id')), __param(1, common_1.Body()),
@@ -68,6 +77,8 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], AddressController.prototype, "update", null);
 __decorate([
+    swagger_1.ApiNotFoundResponse({ description: 'No data is Deleted...  😿' }),
+    swagger_1.ApiOkResponse({ description: 'Adress Data Deleted for ID... 😺' }),
     common_1.Delete(':id'),
     __param(0, common_1.Param('id')),
     __metadata("design:type", Function),

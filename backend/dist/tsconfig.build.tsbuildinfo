@@ -1177,13 +1177,13 @@
         "affectsGlobalScope": false
       },
       "../src/app.service.ts": {
-        "version": "eaf8514ce110fa428a93a27408df4d06d133dbd9ed0a775c315ddfdd507853a9",
-        "signature": "653711fba8904aa27fd8911b63cf526e7b334e13a292da4cefdbbe179ac3f3f2",
+        "version": "5d4242d50092a353e5ab1f06663a89dbc714c7d9d70072ea03c83c5b14750f05",
+        "signature": "d8f4cb0109c1b399d657807fd6af504d74a9300325e0fc915abdbf658b464a97",
         "affectsGlobalScope": false
       },
       "../src/app.controller.ts": {
-        "version": "f9c08a2bf186f03e7109c9fb84c200ae01b5034cf17e96da99eaffa7285bd356",
-        "signature": "7e983b8e4c00931e62be4c9965d29cee345eae8eba669cbffb10e36ee48e93a4",
+        "version": "4299f0ee53d9a99a278fae83e8d0ed7b4a8e0757a0dc44044da418291da96f2d",
+        "signature": "bf85552c9916293a841bb4b17f9625b8f9a7fb5a12dff3da42cb2ab4a14aea6b",
         "affectsGlobalScope": false
       },
       "../node_modules/typeorm/schema-builder/options/tablecolumnoptions.d.ts": {
@@ -3067,8 +3067,8 @@
         "affectsGlobalScope": false
       },
       "../src/product/dto/create-product.dto.ts": {
-        "version": "9640410c48531803a469d185bdc703d54aa57db3739d12c14f8af04f721b3bcf",
-        "signature": "b69a0fc50dae9701e9471c4f3af692667ed81a084db3aa76c5bf59877468725f",
+        "version": "0953506afc5314a73afd05dd7bb48f47add74323e22e90b7523a28cf06307a41",
+        "signature": "adf904762575ebe403c3071ef1b3cdc517c8e6809975d1207795f83a8bc8c3d9",
         "affectsGlobalScope": false
       },
       "../node_modules/@nestjs/mapped-types/dist/mapped-type.interface.d.ts": {
@@ -3112,13 +3112,43 @@
         "affectsGlobalScope": false
       },
       "../src/product/dto/update-product.dto.ts": {
-        "version": "9451f396c6da19f13940f7f87e868c2efd590bb6af31e1ea50a5dea0fbb5a635",
-        "signature": "89dec5f7c87642d25060719cbbb057f0489c616f729bd77a143bc26839b9efcf",
+        "version": "fac354d65fda0dd5c6ff8c473b0a52f294ff603c960133dd31293d9427da25b0",
+        "signature": "77e6086bc9ad76fab91d9138fb12f339d9c0340e09716242b0a0c0a5114643b0",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@types/bcrypt/index.d.ts": {
+        "version": "6c407a8b6e5cabde0c5e4ad2d1d0e18c4de012983e9a006fc5e3e121545552f1",
+        "signature": "6c407a8b6e5cabde0c5e4ad2d1d0e18c4de012983e9a006fc5e3e121545552f1",
+        "affectsGlobalScope": false
+      },
+      "../src/address/entities/address.entity.ts": {
+        "version": "11b6820e65d1d87a0b664486e2396ec7a2535ae531440e8b73c93a018dd96736",
+        "signature": "f1084a3d11bf340dcca2a1bf91f9e591fcd0602cf26ee9bb9dfde188aa49ced1",
+        "affectsGlobalScope": false
+      },
+      "../src/payment/entities/payment.entity.ts": {
+        "version": "fcbda597d5204425b856a4518bd92ffe35ddf7abdd99b48a258f5c589b01b0f4",
+        "signature": "fb8259e2f7e5c7cd35a6b2821594ba82a791a43c475183936ff5fafc33818cea",
+        "affectsGlobalScope": false
+      },
+      "../src/order/entities/order.entity.ts": {
+        "version": "4bf2e9feae5d7792ac7ff50bb6cc3c44eb4ce4b442e09c1a8445df0d63f751f4",
+        "signature": "9115608e4abb5ea0235069abe5f479169588e53b94e0dd0143d7446ba5aa5a28",
+        "affectsGlobalScope": false
+      },
+      "../src/auth/entities/user.entity.ts": {
+        "version": "e1e08ba4540ccd42240e5099146764ae2165bd3066eec7627909d021fb64c94e",
+        "signature": "f8ffb2479adb0b0b7ff1e6165d317b5586dbd7dcf788f0818d73cfc3dd190679",
+        "affectsGlobalScope": false
+      },
+      "../src/order-details/entities/order-detail.entity.ts": {
+        "version": "1cef65b7ca8924b8f40ac682008cba7e5a9ec8627861be3a493192b9953c1bff",
+        "signature": "cd9bc2188d7b02cf91ab34845d5ccc053670f90f88e62a3283ae1bd72208e884",
         "affectsGlobalScope": false
       },
       "../src/product/entities/product.entity.ts": {
-        "version": "2f2c18ab0653e56538312ad692465116c1f3578a4adf54398226ecd9e52eeec8",
-        "signature": "54aa520e8a1e275474f0ce1354405d49e1e716a61fbeda6b71ff33d57df50b36",
+        "version": "5c8a48e1e2091ac12709e9ace452d45f66d54d1f93fa3807af2eef18d3df52e7",
+        "signature": "d004f3a06f4a5a21a2657d8344797f61d51daecd834c73845b6021acabf0100d",
         "affectsGlobalScope": false
       },
       "../node_modules/unique-names-generator/dist/unique-names-generator.constructor.d.ts": {
@@ -3182,8 +3212,8 @@
         "affectsGlobalScope": false
       },
       "../src/product/product.service.ts": {
-        "version": "9ab0a6699845c6003a7f4fd67ceb4c7944fb61fc60e884094022ad3f8748a22d",
-        "signature": "6c97a854957f67d1aee272fb97cf539192e7a95233370c0763bfc5792f378d9c",
+        "version": "c16cd807f9ef46a0a5e0f796c1849700d2bc998e0d4bf631af562fa1bb1d4b1b",
+        "signature": "8411e1c1ab608e24297fae048d4afea8d32efac9eb8984680214a1e257fe27d4",
         "affectsGlobalScope": false
       },
       "../node_modules/@nestjs/passport/dist/abstract.strategy.d.ts": {
@@ -3512,18 +3542,18 @@
         "affectsGlobalScope": false
       },
       "../src/auth/jwt.guard.ts": {
-        "version": "51fc903ffa25cb72c7ecc1aa1fed8c9d5bf7c6dd2f7f0efe9d5fa1d7490b020c",
-        "signature": "e9629b89f6cd33a040577695d89edf882e66287d30c87121f5fc07f404decd25",
+        "version": "86f01fc8f2c8dc7a5d29859dee9467ccb4a7611fc82a79beee69fc71efce4308",
+        "signature": "baf608b3f1bf90782d8b003287213bceae5e9b31f56c2ce676e223ea85ea10b2",
         "affectsGlobalScope": false
       },
       "../src/product/product.controller.ts": {
-        "version": "e31cb1bc969a683391264bba0aa0c03768cd85bae8639e58da2a371a00325699",
-        "signature": "fb48976083b15d5450401a6900c057044c06fe4ea30e9f9b8708ebb9bac9fe64",
+        "version": "1353cbd7924dbd12c2d6f0b6e4a60ecf4ea528a16ee97750d313eed322bf4ff4",
+        "signature": "4bd4cfc7996f2fb5bcfef85fe89e7095cfec07205b13ecaf2b3836bc1a6aa1b0",
         "affectsGlobalScope": false
       },
       "../src/product/product.module.ts": {
-        "version": "5d90581ebdf57684ae9d9951bb327686414487bf1a8ff5c2292d98be5f867509",
-        "signature": "7f8b34d3314e0b7048eab6a82a4f0bf423213dfd64d60f0c5e178bde34c23841",
+        "version": "47d5f16c2be3a63a3a8d268d80175fca8ef66b3ec57013cb0137fa811b001cd0",
+        "signature": "775682a30e63deb0ec3da028a66cf4cd3ae032d1b7d009697c8b9329465ef7f5",
         "affectsGlobalScope": false
       },
       "../node_modules/class-validator/types/validation/validationerror.d.ts": {
@@ -4152,33 +4182,18 @@
         "affectsGlobalScope": false
       },
       "../src/auth/dto/create-user.dto.ts": {
-        "version": "06f560a155591f09ce2869307ef13dd4b6b989eb6e20ed7bb74960696ccb8c7b",
-        "signature": "d0a0c59423e2e487ce3204d2457f7b95e42dcf227c79d96689b9753b90403acb",
+        "version": "aae9afdd690ab836837de23cb1638d19468ab42969adc58bd5c86613403c2b82",
+        "signature": "f932fd4d7c84e044ca70e0bf5af2a88f93bdcbaf117bca1dea10a2b19a37909e",
         "affectsGlobalScope": false
       },
       "../src/auth/dto/login.dto.ts": {
-        "version": "5d63f8276c9708e85b91117f54c42695503c8fd9f78425627c3b381f76fe47dd",
-        "signature": "6c7c3ad0d8503662be36fcb84f9283282ba9b4d18d038963d29594b723cd9059",
-        "affectsGlobalScope": false
-      },
-      "../node_modules/@types/bcrypt/index.d.ts": {
-        "version": "6c407a8b6e5cabde0c5e4ad2d1d0e18c4de012983e9a006fc5e3e121545552f1",
-        "signature": "6c407a8b6e5cabde0c5e4ad2d1d0e18c4de012983e9a006fc5e3e121545552f1",
-        "affectsGlobalScope": false
-      },
-      "../src/address/entities/address.entity.ts": {
-        "version": "71c3be10128fb83a6565c0c2d46f249c5eb24f0ee2e266a73b3356d3a0620ab8",
-        "signature": "c1cf99bb203d240dcb11baa5bd1aac28fbdb008e86cd99ea1f3317f1a4d90788",
-        "affectsGlobalScope": false
-      },
-      "../src/auth/entities/user.entity.ts": {
-        "version": "01e322917f3b6775e231e1de6b6f49097147cfb8fdd3c49cfcd7c34a233adf8a",
-        "signature": "d34c437f05c33502a9edac9ccf189453f127eb448ebeb8514f8371b564529a9f",
+        "version": "11a7e751e9676a6f7b905a50a3f6541e89a3cefa32d02fe550a41b5100fbd645",
+        "signature": "a06fd35e38ea4537e3e2b1fdda47c63b1776bad52db282c8d08e17c61b7bb159",
         "affectsGlobalScope": false
       },
       "../src/auth/user/user.service.ts": {
-        "version": "1f2407cd898b65ee35809548abe44779283fc5ece0d1478a2b3b024911defccd",
-        "signature": "4a9910a00835726aa1acdf08ae1b7c54e90a047f3c794d9f980753a150a588a2",
+        "version": "cfd2daf33bac2a5cb8108690a17465e581ee27d7a82a1962d23eaff146157a04",
+        "signature": "eb17a0537fef9f2d0e7a5a6f240ac74dcd669151983d8e231060acd3f5a5bd7a",
         "affectsGlobalScope": false
       },
       "../node_modules/@types/jsonwebtoken/index.d.ts": {
@@ -4217,18 +4232,18 @@
         "affectsGlobalScope": false
       },
       "../src/auth/constants.ts": {
-        "version": "3ca362d18255ba523afd1ca04cd7fec87665fad4ab713a7f4266165bc05ae783",
-        "signature": "00cff42a04fc97f5f695f5e202a2394e37971bbe5407d6da798c158fa205b604",
+        "version": "11af917712117b5465234934d38a4f4255804d848586ebfe00a25bf22c91ecb9",
+        "signature": "bda8ae07c9bde55d45f8df84a605d89d5736cecdcd1ab209a306bf734c098400",
         "affectsGlobalScope": false
       },
       "../src/auth/auth.service.ts": {
-        "version": "10fb5427b8912502a7352790157ae3cbdad56bfcfbe68e4a53b95b78871f2c0f",
-        "signature": "3242b6f4ee25ac5a3c1da27d8f0a87569faf321ca22369157279a1ad3c9c5724",
+        "version": "a32eba03fda5d799adb3d2412b825638e5d0b80a42d666b52d40a5e46de9ab10",
+        "signature": "914cdb5aff1dc04efa183d0e857ecbf33e3763e11b3c339f67802992e4314251",
         "affectsGlobalScope": false
       },
       "../src/auth/auth.controller.ts": {
-        "version": "eb0cabcb89e6a03a993b1f551ae5512aa4cd9701ea46f4aab2be85668eb1cc59",
-        "signature": "634a7d677a9a2a1b2f9ff9ed5ead4a788ac04e3c18b0fbce5cdccd4eda1e9243",
+        "version": "20f3f60d62f1d02806a5e773ee153102355546da29b3951b3de6604f9a9208a3",
+        "signature": "e28b0f053de768cdf9b4723443a75e344ba1b44245ecd012fbab70fd18a8b30c",
         "affectsGlobalScope": false
       },
       "../node_modules/@types/passport-strategy/index.d.ts": {
@@ -4242,43 +4257,118 @@
         "affectsGlobalScope": false
       },
       "../src/auth/jwt.strategy.ts": {
-        "version": "b71309031f76458c7bdef3a3b92eeeb369c698adec7a173ea99660c53b8acdc2",
-        "signature": "07cea38d7e4a1e708fe69ecdd1591511ad42a95dec98012b11025f785dedad36",
+        "version": "34a705b10dca33339c4d3493af1e3f67dba91164c6f6c5530eb263d9e1eabbb3",
+        "signature": "43e856a0814a476e1623e0e4bd265249dfac338d91fca3e071e9f59030017a02",
         "affectsGlobalScope": false
       },
       "../src/auth/auth.module.ts": {
-        "version": "2d097fe7ea10670a9843ae36d0e18c136f26baca5b304f5def2426f191c4fab1",
-        "signature": "a28b5c0c372fb375910b3fe3c3ce4331509bc18ccef7cc39c9ee9d8daf8225d1",
+        "version": "3acbbff9482a95fc17dd358db2c777a77eb5f70dfa954bd5582f43f1ab4b5a90",
+        "signature": "2e5d258cf85349b02b015c3f1b8873c152d182c3819a7ccc3aff16fc3037a5fc",
         "affectsGlobalScope": false
       },
       "../src/address/dto/create-address.dto.ts": {
-        "version": "48e29c90e31be0126bb554345d69554a05d93627c6b12bc42eb46635af2e359a",
-        "signature": "edc174f0fcf8c2b57811ce265ab5ab81a810799f8d455cace3e6b0722b31020b",
+        "version": "cc6219c7dbccb8e875bb972465a854134cb8c8e78be1da367dc8c6f7ec06f14d",
+        "signature": "9748deb7818fec27ecc768eccf80591370d55f5bf41d153d594ac3c07169ef18",
         "affectsGlobalScope": false
       },
       "../src/address/dto/update-address.dto.ts": {
-        "version": "13be985b670e6c432b41cadbf3f639e834c5f16d2a6ded300df079800c195425",
-        "signature": "44a053919a7472ed22e85528dc1bb698cfcc864a35222c24a2f57c4954a067e7",
+        "version": "6b88dc4494368ce2db3a0f90cabf7d8a45ce777d7c5d0683fc296a07237e8b40",
+        "signature": "7452970d387a89911d63498f91a8af9a7b27b4a68b9a40204c95e05eacc738eb",
         "affectsGlobalScope": false
       },
       "../src/address/address.service.ts": {
-        "version": "6c617e9efb6c6a45a5056b3e29d27bf60ddab20a6e0335b43637c07b4179c8a9",
-        "signature": "3e038728b40ff62e10703efe83c8d4711690c6bbeb415b7d4697c52621373094",
+        "version": "942ac9bd31cfef387e57e1a26532598f9acd119a729b5c3a6dab8668b4b5fe92",
+        "signature": "0893341202349f1a0e1a5b55669072ac9de77de3e071bb51176cd34d871737ec",
         "affectsGlobalScope": false
       },
       "../src/address/address.controller.ts": {
-        "version": "071f20b7dc251b31118c54b8843b91973c2c4e7f5562b4c938130dbc8d25fb51",
-        "signature": "6d715354a9a3fae77a5f092d87bbc0e5760bb0537e281feab641e81d729fe8de",
+        "version": "82e068498832c2fa03ab190c9cd319334c11fe87269edf00a036822b205ee181",
+        "signature": "db37aa7dc1bc685b52c46252d11a8fcedce1e8e393a88ed0600d8cab6ed1f4b7",
         "affectsGlobalScope": false
       },
       "../src/address/address.module.ts": {
-        "version": "646d118c3b08eedbe0f0a1df92da777e60e6c5c514c65bdcc944fb8c977b5986",
-        "signature": "b112ec8d0a9225ad0f2c546220cad4b0fa135e2f39a6e006afefe119aeec774b",
+        "version": "7cb7502e73b41836909af83397c03ed4ab8a3e0f2cdde5131b2776b96410c9be",
+        "signature": "6aa7d0b617836ab60b6ee6cb286135bfa5de5e88350fa70fa8c148222aad6d0b",
+        "affectsGlobalScope": false
+      },
+      "../src/order/dto/create-order.dto.ts": {
+        "version": "686f0a215ed740b197b74a8f38cbae56ad6ad27b303a72b45c256263c2a90dc6",
+        "signature": "8e46c1a1ad6b677f4a9fdd1a87d6e4206f0a3cdcb6659dfb9d7ce2e188c9fff5",
+        "affectsGlobalScope": false
+      },
+      "../src/order/dto/update-order.dto.ts": {
+        "version": "bb8dd7fe0431e929e0d57704235db03246d165e623f20fdec27ef6ad766f5d36",
+        "signature": "fe679ad2113ebec3a664cf96ef7c25a9324fe501df8e8172b6051cbf58333875",
+        "affectsGlobalScope": false
+      },
+      "../src/order/order.service.ts": {
+        "version": "64f836b35762f69154f105853f817511102f152edfe1340566ea8db7f773dea2",
+        "signature": "378bac69fc094af0c765fbbfce859bdb6e9276bd4f796b21d8c257ef499d4262",
+        "affectsGlobalScope": false
+      },
+      "../src/order/order.controller.ts": {
+        "version": "c2481601a684a0cdf872af8d4bc659db8a51d3abe966599514632b6e25646f24",
+        "signature": "42bddc1f3a3f8b8600f39af7221e777bd68c1d2fa9f2e3fc661bb08152647471",
+        "affectsGlobalScope": false
+      },
+      "../src/order/order.module.ts": {
+        "version": "6214dc4557c87abe45942490739aef5f5ef8a7800a89b40d2c59dea7faa352a6",
+        "signature": "03b8112aa80d4314c18f98dc39f72e0653135546d00d8c9bcd5e21a461e5218d",
+        "affectsGlobalScope": false
+      },
+      "../src/order-details/dto/create-order-detail.dto.ts": {
+        "version": "e179bdd9409a78d7718994e2b25bba9681da2b453f10d77cc590b8c06ac12d03",
+        "signature": "b8a8bd5acffc690206bae76d55a20c3afb3463dabcb9d8af4c8ba68f04cfad10",
+        "affectsGlobalScope": false
+      },
+      "../src/order-details/dto/update-order-detail.dto.ts": {
+        "version": "1ee1bb1e043751eec5a8a94e22b3775e9ca58271f44c45c124b1503cd208e1ea",
+        "signature": "238f5d6210bf2d1c2a9f69fc0cf419259c05317cca4c43fdd9cdc9b0c0c1b0ed",
+        "affectsGlobalScope": false
+      },
+      "../src/order-details/order-details.service.ts": {
+        "version": "66eec78de2b22ec9d76091148b6062a775939700d33a0817188a3976cdf48360",
+        "signature": "c7b40ad84a31644ec8d96600d23b818747230482bf3282fc98bc76e16544732c",
+        "affectsGlobalScope": false
+      },
+      "../src/order-details/order-details.controller.ts": {
+        "version": "db482277b4041153cc4f084fad537cebae76020a3f6106da164c34d52dd644cf",
+        "signature": "43ac3c2b443b1e431ad48cb7651b6ae2962d9cb3d6cca88aff2fa5d98bd467b8",
+        "affectsGlobalScope": false
+      },
+      "../src/order-details/order-details.module.ts": {
+        "version": "bc68a13be21fe7f176a62bfa888bade38063073eada3f2abee549ce6407fd697",
+        "signature": "5250f93d23fe953e165ff206252775d1d090629ed0f831054c320eec0e5bec77",
+        "affectsGlobalScope": false
+      },
+      "../src/payment/dto/create-payment.dto.ts": {
+        "version": "8a489ac717a66d9edd1fc583dc4ec0c95c40c98b469a3c0f64e63913c5908505",
+        "signature": "ac5bdf262b8a2b1235a3f2d73416eb674ea2cb76fb7a5fdaceee91e6a51ad6fb",
+        "affectsGlobalScope": false
+      },
+      "../src/payment/dto/update-payment.dto.ts": {
+        "version": "211a984a7fe94bbf66be59579443084b7206f1ff63636e220f49b975dea2c543",
+        "signature": "e6ae9daf73d31805fa735379338f5385de0429f244a147dcfafe75b84eabc745",
+        "affectsGlobalScope": false
+      },
+      "../src/payment/payment.service.ts": {
+        "version": "ba6ea55a6f094509190bd8ee852cd95e9f413a4a21363c3a2cfb527d0a9b415f",
+        "signature": "8cccc75dbbac94e77c9257c4a01ae4058812fa74b8f035e9a19a169c5e5be0b9",
+        "affectsGlobalScope": false
+      },
+      "../src/payment/payment.controller.ts": {
+        "version": "0f278a4fa9f00d70297da9f9332ae0b0838d317db1f7ccfbd17e9204009aa7c7",
+        "signature": "79c85c6d326b9d689b9ad2398a93132e91a1ba86a989ca7239099492751663ca",
+        "affectsGlobalScope": false
+      },
+      "../src/payment/payment.module.ts": {
+        "version": "f0f89a7fc1fffc6eb1e8f301bca7270701c3e73d57a9563133f45974a1aeeff4",
+        "signature": "1700474b35ff2b77850d138342e908104f4724ee0d3b17ea8d6d9ccc3d14dad5",
         "affectsGlobalScope": false
       },
       "../src/app.module.ts": {
-        "version": "ab1caaa3c947fa05d6b0021b54ce3ca0e4521dc1a6e3bb28b297a6d42d19ed61",
-        "signature": "b82491e2990291580288c5602d4c017238977749d52b17391f0e45d9a29be644",
+        "version": "6fbf9f283ad77fb0d88e9c1837d0c8a815bd7fcb3ac5b69ce31e45aadc62174e",
+        "signature": "9fc7f7b6ad854404973b8cba8e6d883f758237991968e9a3965d716d46f1da88",
         "affectsGlobalScope": false
       },
       "../node_modules/@nestjs/core/adapters/http-adapter.d.ts": {
@@ -4542,98 +4632,8 @@
         "affectsGlobalScope": false
       },
       "../src/main.ts": {
-        "version": "674180b3c3655663c825f5071c56b1f8a20ba4d86be4a52c0b0dce4274e7625b",
-        "signature": "8e609bb71c20b858c77f0e9f90bb1319db8477b13f9f965f1a1e18524bf50881",
-        "affectsGlobalScope": false
-      },
-      "../src/orders/dto/create-order.dto.ts": {
-        "version": "c2fef915965a51d0b7478673d2af5364222cb61689ce03794ea9d2ab419668ac",
-        "signature": "d6550a8c0a051f5c999aed81224ba3e21581776648530ea595ea36f22145e91d",
-        "affectsGlobalScope": false
-      },
-      "../src/orders/dto/update-order.dto.ts": {
-        "version": "d88f5c24a3aab3681e16baf840e6811680dd08095e0699f8196108fcc3f3232e",
-        "signature": "fe679ad2113ebec3a664cf96ef7c25a9324fe501df8e8172b6051cbf58333875",
-        "affectsGlobalScope": false
-      },
-      "../src/orderdetails/entities/orderdetail.entity.ts": {
-        "version": "11aaec02db964581911072c41862619cdbe9e6ce8a55608266c32a29469ec923",
-        "signature": "5795ded703bc38b4adefc5c506cdafaf0a2ffc6507997042fca292d76d0e9820",
-        "affectsGlobalScope": false
-      },
-      "../src/orders/entities/order.entity.ts": {
-        "version": "bf80ddbc2b927dabe2a32a1447a3fad00f6bcde9048a998476ff1983f7590da5",
-        "signature": "0098d03488930939b6e18392bc80eb8a3b602b6445311c714b40cde8de1bf392",
-        "affectsGlobalScope": false
-      },
-      "../src/orders/orders.service.ts": {
-        "version": "738af7f4979ebd769ea287bada7f66d1eacfaeba348adf292a02e65d2f1e618b",
-        "signature": "769e8b83c2afd215399b7f16ee75daf180283abb0e3bd020ba2592e69ef07c45",
-        "affectsGlobalScope": false
-      },
-      "../src/orderdetails/dto/create-orderdetail.dto.ts": {
-        "version": "03207c2d1e623a3652cc51da31406bc3ce5cea0a729d3b797ac835e996f54e94",
-        "signature": "cf9a23d3bc7d5f72f54230adb67c5dac4110f46a4b6d3b6c994dbf252034e1c0",
-        "affectsGlobalScope": false
-      },
-      "../src/orderdetails/dto/update-orderdetail.dto.ts": {
-        "version": "e56cb3d652c6cfed4c52489d8500307e83d3fb36f492b8f5c9135ec28fd0ccc5",
-        "signature": "6fe1e99b0b3996d03fb4d9024c1c6594dd7a9e8aba96c7d335b269880b8a047e",
-        "affectsGlobalScope": false
-      },
-      "../src/orderdetails/orderdetails.service.ts": {
-        "version": "2e9ec33812eaa06e00bd83537e0ed354d84bbc0de95381e4dac0b852bd7af6ac",
-        "signature": "a86ba7a158c2e41357893bf5f3ab0530105c4aa95cd82af7c707710a77acfe86",
-        "affectsGlobalScope": false
-      },
-      "../src/orderdetails/orderdetails.controller.ts": {
-        "version": "56341d9b7c15c09fa065bc981b43fc63cce9b87861d2cc744bc8882860fefd9c",
-        "signature": "ff3380b730cfe36f42a3519023f7a6a6eb948cb181c4128959938bd2945360b2",
-        "affectsGlobalScope": false
-      },
-      "../src/orderdetails/orderdetails.module.ts": {
-        "version": "30dfb331e5825384d9be92ca8e70142aed7d42938e3b266d414ee25d2c455181",
-        "signature": "d93f699b2c405f861b37d288e5a0aaf4dbd2dd813eabe8953209d1e72b4110f7",
-        "affectsGlobalScope": false
-      },
-      "../src/orders/orders.controller.ts": {
-        "version": "3bca7780dcef33bfcc1d78b675ac272407618c58b07c1e57b948187fd1be9350",
-        "signature": "fc9567aaecc371cd6a9f93a904015e8bbe501d09ee1ae470dfebf2ded1fc9851",
-        "affectsGlobalScope": false
-      },
-      "../src/orders/orders.module.ts": {
-        "version": "9021e0fedbf328832fa1ccc883e8fcf8c1a97908fe90c69d7127741754eabf79",
-        "signature": "f2a098761374558eef78bc1c94d34464e78aba0b8a2a2b58cb009a7e88a54002",
-        "affectsGlobalScope": false
-      },
-      "../src/payment/dto/create-payment.dto.ts": {
-        "version": "2422de8c5bf0bdb88e21653701792870194a6bd3da30327a9b0de36acfb45423",
-        "signature": "f17acc0434a44203e02378b426960935859139feb6983c1087fccce6e1ed4ce1",
-        "affectsGlobalScope": false
-      },
-      "../src/payment/dto/update-payment.dto.ts": {
-        "version": "211a984a7fe94bbf66be59579443084b7206f1ff63636e220f49b975dea2c543",
-        "signature": "e6ae9daf73d31805fa735379338f5385de0429f244a147dcfafe75b84eabc745",
-        "affectsGlobalScope": false
-      },
-      "../src/payment/payment.service.ts": {
-        "version": "32a3e1ad1d4d3d1749a3a8bb3f368a8738e34e225aeb09e236aa6916b4238c34",
-        "signature": "ebefb90039c411cc6fe7174f9ee3096a7772e16f9e456e9b82bb50ea0a61e23d",
-        "affectsGlobalScope": false
-      },
-      "../src/payment/payment.controller.ts": {
-        "version": "6036654164be60c9b947e08ef07d10d674868f4dea4435f32eaf08b306be8de0",
-        "signature": "eefd4801cc22e63a7cc41edbb3981447767676f52d566cb6166e20a791d26f3a",
-        "affectsGlobalScope": false
-      },
-      "../src/payment/payment.module.ts": {
-        "version": "f53cd97f7eed5a429ad05f3e7cf36ce316347e1e3ed426d95bd3a4379fb67e75",
-        "signature": "1700474b35ff2b77850d138342e908104f4724ee0d3b17ea8d6d9ccc3d14dad5",
-        "affectsGlobalScope": false
-      },
-      "../src/payment/entities/payment.entity.ts": {
-        "version": "1244a955eb6e706b476bfc5c0113f45ea784bb2ef3f8c94c62b70d1bd7e792c6",
-        "signature": "3d7aab9610dbfc24190e9b4fa4bb5930394121210566dc374faaff40dbd38d43",
+        "version": "13e901abddff152b7a503b46a9f0088023a0a2d8a758e50c8a5180e5cbc91a97",
+        "signature": "f761c91419d0a89422a0004ef1a92929dd4d2d5e5c16758654d8b0467d1998c6",
         "affectsGlobalScope": false
       },
       "../node_modules/@babel/types/lib/index.d.ts": {
@@ -8194,6 +8194,9 @@
         "../src/app.controller.ts",
         "../src/app.service.ts",
         "../src/auth/auth.module.ts",
+        "../src/order-details/order-details.module.ts",
+        "../src/order/order.module.ts",
+        "../src/payment/payment.module.ts",
         "../src/product/product.module.ts"
       ],
       "../src/app.service.ts": [
@@ -8241,7 +8244,10 @@
       "../src/auth/entities/user.entity.ts": [
         "../node_modules/@types/bcrypt/index.d.ts",
         "../node_modules/typeorm/index.d.ts",
-        "../src/address/entities/address.entity.ts"
+        "../src/address/entities/address.entity.ts",
+        "../src/order-details/entities/order-detail.entity.ts",
+        "../src/order/entities/order.entity.ts",
+        "../src/payment/entities/payment.entity.ts"
       ],
       "../src/auth/jwt.guard.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
@@ -8268,110 +8274,133 @@
         "../node_modules/@nestjs/swagger/index.d.ts",
         "../src/app.module.ts"
       ],
-      "../src/orderdetails/dto/create-orderdetail.dto.ts": [
-        "../node_modules/@nestjs/common/index.d.ts",
-        "../node_modules/@nestjs/swagger/index.d.ts",
-        "../node_modules/@nestjs/typeorm/index.d.ts",
-        "../node_modules/class-validator/types/index.d.ts",
-        "../node_modules/typeorm/index.d.ts",
-        "../src/orderdetails/entities/orderdetail.entity.ts"
+      "../src/order-details/dto/create-order-detail.dto.ts": [
+        "../node_modules/@nestjs/swagger/index.d.ts"
       ],
-      "../src/orderdetails/dto/update-orderdetail.dto.ts": [
+      "../src/order-details/dto/update-order-detail.dto.ts": [
         "../node_modules/@nestjs/swagger/index.d.ts",
-        "../src/orderdetails/dto/create-orderdetail.dto.ts"
+        "../src/order-details/dto/create-order-detail.dto.ts"
       ],
-      "../src/orderdetails/entities/orderdetail.entity.ts": [
+      "../src/order-details/entities/order-detail.entity.ts": [
         "../node_modules/typeorm/index.d.ts",
         "../src/auth/entities/user.entity.ts",
-        "../src/orders/entities/order.entity.ts",
+        "../src/order/entities/order.entity.ts",
         "../src/product/entities/product.entity.ts"
       ],
-      "../src/orderdetails/orderdetails.controller.ts": [
+      "../src/order-details/order-details.controller.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
         "../node_modules/@nestjs/swagger/index.d.ts",
         "../src/auth/jwt.guard.ts",
-        "../src/orderdetails/dto/create-orderdetail.dto.ts",
-        "../src/orderdetails/dto/update-orderdetail.dto.ts",
-        "../src/orderdetails/orderdetails.service.ts"
+        "../src/order-details/dto/create-order-detail.dto.ts",
+        "../src/order-details/dto/update-order-detail.dto.ts",
+        "../src/order-details/order-details.service.ts"
       ],
-      "../src/orderdetails/orderdetails.module.ts": [
+      "../src/order-details/order-details.module.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
         "../node_modules/@nestjs/typeorm/index.d.ts",
-        "../src/orderdetails/entities/orderdetail.entity.ts",
-        "../src/orderdetails/orderdetails.controller.ts",
-        "../src/orderdetails/orderdetails.service.ts",
-        "../src/orders/entities/order.entity.ts",
-        "../src/orders/orders.service.ts",
+        "../src/order-details/entities/order-detail.entity.ts",
+        "../src/order-details/order-details.controller.ts",
+        "../src/order-details/order-details.service.ts",
+        "../src/order/entities/order.entity.ts",
+        "../src/order/order.service.ts",
         "../src/product/entities/product.entity.ts",
         "../src/product/product.service.ts"
       ],
-      "../src/orderdetails/orderdetails.service.ts": [
+      "../src/order-details/order-details.service.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
         "../node_modules/@nestjs/typeorm/index.d.ts",
         "../node_modules/typeorm/index.d.ts",
         "../src/auth/user/user.service.ts",
-        "../src/orderdetails/dto/create-orderdetail.dto.ts",
-        "../src/orderdetails/dto/update-orderdetail.dto.ts",
-        "../src/orderdetails/entities/orderdetail.entity.ts",
-        "../src/orders/orders.service.ts",
+        "../src/order-details/dto/create-order-detail.dto.ts",
+        "../src/order-details/dto/update-order-detail.dto.ts",
+        "../src/order-details/entities/order-detail.entity.ts",
+        "../src/order/order.service.ts",
         "../src/product/product.service.ts"
       ],
-      "../src/orders/dto/create-order.dto.ts": [
-        "../node_modules/@nestjs/swagger/index.d.ts",
-        "../node_modules/class-validator/types/index.d.ts"
+      "../src/order/dto/create-order.dto.ts": [
+        "../node_modules/@nestjs/swagger/index.d.ts"
       ],
-      "../src/orders/dto/update-order.dto.ts": [
+      "../src/order/dto/update-order.dto.ts": [
         "../node_modules/@nestjs/swagger/index.d.ts",
-        "../src/orders/dto/create-order.dto.ts"
+        "../src/order/dto/create-order.dto.ts"
       ],
-      "../src/orders/entities/order.entity.ts": [
+      "../src/order/entities/order.entity.ts": [
         "../node_modules/typeorm/index.d.ts",
         "../src/auth/entities/user.entity.ts",
-        "../src/orderdetails/entities/orderdetail.entity.ts"
+        "../src/order-details/entities/order-detail.entity.ts",
+        "../src/payment/entities/payment.entity.ts",
+        "../src/product/entities/product.entity.ts"
       ],
-      "../src/orders/orders.controller.ts": [
+      "../src/order/order.controller.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
         "../node_modules/@nestjs/swagger/index.d.ts",
         "../src/auth/jwt.guard.ts",
-        "../src/orders/dto/create-order.dto.ts",
-        "../src/orders/dto/update-order.dto.ts",
-        "../src/orders/orders.service.ts"
+        "../src/order/dto/create-order.dto.ts",
+        "../src/order/dto/update-order.dto.ts",
+        "../src/order/order.service.ts"
       ],
-      "../src/orders/orders.module.ts": [
+      "../src/order/order.module.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
         "../node_modules/@nestjs/typeorm/index.d.ts",
-        "../src/orders/entities/order.entity.ts",
-        "../src/orders/orders.controller.ts",
-        "../src/orders/orders.service.ts"
+        "../src/order/entities/order.entity.ts",
+        "../src/order/order.controller.ts",
+        "../src/order/order.service.ts",
+        "../src/product/entities/product.entity.ts",
+        "../src/product/product.service.ts"
       ],
-      "../src/orders/orders.service.ts": [
+      "../src/order/order.service.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
         "../node_modules/@nestjs/typeorm/index.d.ts",
         "../node_modules/typeorm/index.d.ts",
         "../src/auth/user/user.service.ts",
-        "../src/orders/dto/create-order.dto.ts",
-        "../src/orders/dto/update-order.dto.ts",
-        "../src/orders/entities/order.entity.ts"
+        "../src/order/dto/create-order.dto.ts",
+        "../src/order/dto/update-order.dto.ts",
+        "../src/order/entities/order.entity.ts",
+        "../src/product/product.service.ts"
+      ],
+      "../src/payment/dto/create-payment.dto.ts": [
+        "../node_modules/@nestjs/swagger/index.d.ts"
       ],
       "../src/payment/dto/update-payment.dto.ts": [
         "../node_modules/@nestjs/swagger/index.d.ts",
         "../src/payment/dto/create-payment.dto.ts"
       ],
+      "../src/payment/entities/payment.entity.ts": [
+        "../node_modules/typeorm/index.d.ts",
+        "../src/auth/entities/user.entity.ts",
+        "../src/order/entities/order.entity.ts",
+        "../src/product/entities/product.entity.ts"
+      ],
       "../src/payment/payment.controller.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/@nestjs/swagger/index.d.ts",
+        "../src/auth/jwt.guard.ts",
         "../src/payment/dto/create-payment.dto.ts",
         "../src/payment/dto/update-payment.dto.ts",
         "../src/payment/payment.service.ts"
       ],
       "../src/payment/payment.module.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/@nestjs/typeorm/index.d.ts",
+        "../src/order/entities/order.entity.ts",
+        "../src/order/order.service.ts",
+        "../src/payment/entities/payment.entity.ts",
         "../src/payment/payment.controller.ts",
-        "../src/payment/payment.service.ts"
+        "../src/payment/payment.service.ts",
+        "../src/product/entities/product.entity.ts",
+        "../src/product/product.service.ts"
       ],
       "../src/payment/payment.service.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/@nestjs/typeorm/index.d.ts",
+        "../node_modules/typeorm/index.d.ts",
+        "../src/auth/user/user.service.ts",
+        "../src/order/entities/order.entity.ts",
+        "../src/order/order.service.ts",
         "../src/payment/dto/create-payment.dto.ts",
-        "../src/payment/dto/update-payment.dto.ts"
+        "../src/payment/dto/update-payment.dto.ts",
+        "../src/payment/entities/payment.entity.ts",
+        "../src/product/product.service.ts"
       ],
       "../src/product/dto/create-product.dto.ts": [
         "../node_modules/@nestjs/swagger/index.d.ts"
@@ -8381,7 +8410,10 @@
         "../src/product/dto/create-product.dto.ts"
       ],
       "../src/product/entities/product.entity.ts": [
-        "../node_modules/typeorm/index.d.ts"
+        "../node_modules/typeorm/index.d.ts",
+        "../src/order-details/entities/order-detail.entity.ts",
+        "../src/order/entities/order.entity.ts",
+        "../src/payment/entities/payment.entity.ts"
       ],
       "../src/product/product.controller.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
@@ -11764,7 +11796,10 @@
         "../src/auth/user/user.service.ts"
       ],
       "../src/auth/entities/user.entity.ts": [
-        "../src/address/entities/address.entity.ts"
+        "../src/address/entities/address.entity.ts",
+        "../src/order-details/entities/order-detail.entity.ts",
+        "../src/order/entities/order.entity.ts",
+        "../src/payment/entities/payment.entity.ts"
       ],
       "../src/auth/jwt.guard.ts": [
         "../node_modules/@nestjs/passport/index.d.ts"
@@ -11778,76 +11813,105 @@
         "../src/auth/dto/create-user.dto.ts",
         "../src/auth/entities/user.entity.ts"
       ],
-      "../src/orderdetails/dto/update-orderdetail.dto.ts": [
+      "../src/order-details/dto/update-order-detail.dto.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
-        "../src/orderdetails/dto/create-orderdetail.dto.ts"
+        "../src/order-details/dto/create-order-detail.dto.ts"
       ],
-      "../src/orderdetails/entities/orderdetail.entity.ts": [
+      "../src/order-details/entities/order-detail.entity.ts": [
         "../src/auth/entities/user.entity.ts",
-        "../src/orders/entities/order.entity.ts",
+        "../src/order/entities/order.entity.ts",
         "../src/product/entities/product.entity.ts"
       ],
-      "../src/orderdetails/orderdetails.controller.ts": [
+      "../src/order-details/order-details.controller.ts": [
+        "../node_modules/typeorm/index.d.ts",
         "../src/auth/entities/user.entity.ts",
-        "../src/orderdetails/dto/create-orderdetail.dto.ts",
-        "../src/orderdetails/dto/update-orderdetail.dto.ts",
-        "../src/orderdetails/entities/orderdetail.entity.ts",
-        "../src/orderdetails/orderdetails.service.ts",
-        "../src/orders/entities/order.entity.ts",
+        "../src/order-details/dto/create-order-detail.dto.ts",
+        "../src/order-details/dto/update-order-detail.dto.ts",
+        "../src/order-details/entities/order-detail.entity.ts",
+        "../src/order-details/order-details.service.ts",
+        "../src/order/entities/order.entity.ts",
         "../src/product/entities/product.entity.ts"
       ],
-      "../src/orderdetails/orderdetails.service.ts": [
+      "../src/order-details/order-details.service.ts": [
         "../node_modules/typeorm/index.d.ts",
         "../src/auth/entities/user.entity.ts",
         "../src/auth/user/user.service.ts",
-        "../src/orderdetails/dto/create-orderdetail.dto.ts",
-        "../src/orderdetails/dto/update-orderdetail.dto.ts",
-        "../src/orderdetails/entities/orderdetail.entity.ts",
-        "../src/orders/entities/order.entity.ts",
-        "../src/orders/orders.service.ts",
+        "../src/order-details/dto/create-order-detail.dto.ts",
+        "../src/order-details/dto/update-order-detail.dto.ts",
+        "../src/order-details/entities/order-detail.entity.ts",
+        "../src/order/entities/order.entity.ts",
+        "../src/order/order.service.ts",
         "../src/product/entities/product.entity.ts",
         "../src/product/product.service.ts"
       ],
-      "../src/orders/dto/update-order.dto.ts": [
+      "../src/order/dto/update-order.dto.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
-        "../src/orders/dto/create-order.dto.ts"
+        "../src/order/dto/create-order.dto.ts"
       ],
-      "../src/orders/entities/order.entity.ts": [
+      "../src/order/entities/order.entity.ts": [
         "../src/auth/entities/user.entity.ts",
-        "../src/orderdetails/entities/orderdetail.entity.ts"
+        "../src/order-details/entities/order-detail.entity.ts",
+        "../src/payment/entities/payment.entity.ts",
+        "../src/product/entities/product.entity.ts"
       ],
-      "../src/orders/orders.controller.ts": [
+      "../src/order/order.controller.ts": [
         "../node_modules/typeorm/index.d.ts",
         "../src/auth/entities/user.entity.ts",
-        "../src/orders/dto/create-order.dto.ts",
-        "../src/orders/dto/update-order.dto.ts",
-        "../src/orders/entities/order.entity.ts",
-        "../src/orders/orders.service.ts"
+        "../src/order/dto/create-order.dto.ts",
+        "../src/order/dto/update-order.dto.ts",
+        "../src/order/entities/order.entity.ts",
+        "../src/order/order.service.ts",
+        "../src/product/entities/product.entity.ts"
       ],
-      "../src/orders/orders.service.ts": [
+      "../src/order/order.service.ts": [
         "../node_modules/typeorm/index.d.ts",
         "../src/auth/entities/user.entity.ts",
         "../src/auth/user/user.service.ts",
-        "../src/orders/dto/create-order.dto.ts",
-        "../src/orders/dto/update-order.dto.ts",
-        "../src/orders/entities/order.entity.ts"
+        "../src/order/dto/create-order.dto.ts",
+        "../src/order/dto/update-order.dto.ts",
+        "../src/order/entities/order.entity.ts",
+        "../src/product/entities/product.entity.ts",
+        "../src/product/product.service.ts"
       ],
       "../src/payment/dto/update-payment.dto.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
         "../src/payment/dto/create-payment.dto.ts"
       ],
+      "../src/payment/entities/payment.entity.ts": [
+        "../src/auth/entities/user.entity.ts",
+        "../src/order/entities/order.entity.ts",
+        "../src/product/entities/product.entity.ts"
+      ],
       "../src/payment/payment.controller.ts": [
+        "../node_modules/typeorm/index.d.ts",
+        "../src/auth/entities/user.entity.ts",
+        "../src/order/entities/order.entity.ts",
         "../src/payment/dto/create-payment.dto.ts",
         "../src/payment/dto/update-payment.dto.ts",
-        "../src/payment/payment.service.ts"
+        "../src/payment/entities/payment.entity.ts",
+        "../src/payment/payment.service.ts",
+        "../src/product/entities/product.entity.ts"
       ],
       "../src/payment/payment.service.ts": [
+        "../node_modules/typeorm/index.d.ts",
+        "../src/auth/entities/user.entity.ts",
+        "../src/auth/user/user.service.ts",
+        "../src/order/entities/order.entity.ts",
+        "../src/order/order.service.ts",
         "../src/payment/dto/create-payment.dto.ts",
-        "../src/payment/dto/update-payment.dto.ts"
+        "../src/payment/dto/update-payment.dto.ts",
+        "../src/payment/entities/payment.entity.ts",
+        "../src/product/entities/product.entity.ts",
+        "../src/product/product.service.ts"
       ],
       "../src/product/dto/update-product.dto.ts": [
         "../node_modules/@nestjs/mapped-types/index.d.ts",
         "../src/product/dto/create-product.dto.ts"
+      ],
+      "../src/product/entities/product.entity.ts": [
+        "../src/order-details/entities/order-detail.entity.ts",
+        "../src/order/entities/order.entity.ts",
+        "../src/payment/entities/payment.entity.ts"
       ],
       "../src/product/product.controller.ts": [
         "../node_modules/typeorm/index.d.ts",
@@ -12803,6 +12867,24 @@
       "../src/auth/jwt.strategy.ts",
       "../src/auth/user/user.service.ts",
       "../src/main.ts",
+      "../src/order-details/dto/create-order-detail.dto.ts",
+      "../src/order-details/dto/update-order-detail.dto.ts",
+      "../src/order-details/entities/order-detail.entity.ts",
+      "../src/order-details/order-details.controller.ts",
+      "../src/order-details/order-details.module.ts",
+      "../src/order-details/order-details.service.ts",
+      "../src/order/dto/create-order.dto.ts",
+      "../src/order/dto/update-order.dto.ts",
+      "../src/order/entities/order.entity.ts",
+      "../src/order/order.controller.ts",
+      "../src/order/order.module.ts",
+      "../src/order/order.service.ts",
+      "../src/payment/dto/create-payment.dto.ts",
+      "../src/payment/dto/update-payment.dto.ts",
+      "../src/payment/entities/payment.entity.ts",
+      "../src/payment/payment.controller.ts",
+      "../src/payment/payment.module.ts",
+      "../src/payment/payment.service.ts",
       "../src/product/dto/create-product.dto.ts",
       "../src/product/dto/update-product.dto.ts",
       "../src/product/entities/product.entity.ts",

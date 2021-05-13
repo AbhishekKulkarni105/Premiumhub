@@ -13,6 +13,9 @@ exports.UserEntity = void 0;
 const typeorm_1 = require("typeorm");
 const bcrypt = require("bcrypt");
 const address_entity_1 = require("../../address/entities/address.entity");
+const order_entity_1 = require("../../order/entities/order.entity");
+const order_detail_entity_1 = require("../../order-details/entities/order-detail.entity");
+const payment_entity_1 = require("../../payment/entities/payment.entity");
 let UserEntity = class UserEntity {
     async hashPassword() {
         this.userPassword = await bcrypt.hash(this.userPassword, 10);
@@ -48,6 +51,18 @@ __decorate([
     typeorm_1.OneToMany(() => address_entity_1.Address, (address) => address.user),
     __metadata("design:type", Array)
 ], UserEntity.prototype, "address", void 0);
+__decorate([
+    typeorm_1.OneToMany(() => order_entity_1.Order, (order) => order.userId),
+    __metadata("design:type", Array)
+], UserEntity.prototype, "orderId", void 0);
+__decorate([
+    typeorm_1.OneToMany(() => order_detail_entity_1.OrderDetail, (orderDetail) => orderDetail.userId),
+    __metadata("design:type", Array)
+], UserEntity.prototype, "orderDetailId", void 0);
+__decorate([
+    typeorm_1.OneToMany(() => payment_entity_1.Payment, (payment) => payment.userId),
+    __metadata("design:type", Array)
+], UserEntity.prototype, "paymentId", void 0);
 UserEntity = __decorate([
     typeorm_1.Entity({ name: 'user' })
 ], UserEntity);

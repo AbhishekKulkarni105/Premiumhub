@@ -1,6 +1,8 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { UserService } from 'src/auth/user/user.service';
+import { ProductService } from 'src/product/product.service';
+
 import { Repository } from 'typeorm';
 import { CreateOrderDto } from './dto/create-order.dto';
 import { UpdateOrderDto } from './dto/update-order.dto';
@@ -10,51 +12,52 @@ import { Order } from './entities/order.entity';
 export class OrderService {
   constructor(
     @InjectRepository(Order) private orderRepository:Repository<Order>,
-    private userService:UserService
-  ){}
-  async create(userId:string,createOrderDto: CreateOrderDto) {
-    const user= await this.userService.findById(userId)
-    
+    private userService:UserService,private productService:ProductService
+   
+  ){
+
+  }
+ async create(userId:string,productId:number,createOrderDto: CreateOrderDto) {
+    const user =await this.userService.findById(userId);
+    const product = await this.productService.findOne(productId)
+    const{amount,sDate,status}=createOrderDto;
+
     return this.orderRepository.save({
-      orderAmount: createOrderDto.amount,
-      orderStatus: createOrderDto.status,
+      orderAmount:amount,
+      shippingDate:sDate,
+      orderStatus:status,
       userId:user,
-    });
+      productId:product
+
+    })
   }
 
-
-  
-  findAll(userId: string) {
-    return this.orderRepository.find({where:{userId: userId }}).then((data) => {
-      if (data.length==0) throw new NotFoundException();
+  async findAll(userId:string) {
+    const user=await this.userService.findById(userId)
+    return this.orderRepository.find({where:{userId:user}});
+  }
+  findOne(id: number) {
+    return this.orderRepository.findOne(id).then((data) => {
+      if (!data) throw new NotFoundException(); //throw new HttpException({}, 204);
       return data;
     });
   }
-
- 
-  findOne(userId: string, orderId: number) {
-    return this.orderRepository.findOne({
-      where: { userId: userId, orderId: orderId }
-    }).then((data) => {
-      if (!data) throw new NotFoundException();
+  async update(id: number, updateOrderDto: UpdateOrderDto) {
+    
+    
+    return this.orderRepository.update({orderId:id},{
+    
+      orderAmount:updateOrderDto.amount,
+      shippingDate:updateOrderDto.sDate,
+      orderStatus:updateOrderDto.status,
+      
+    }).then((data)=>{
+      if(!data) throw new NotFoundException();
       return data;
-    });
+    })
   }
-
-  update(id: number, updateOrderDto: UpdateOrderDto) {
-    return this.orderRepository.update(
-      {orderId:id},
-      {
-        orderAmount:updateOrderDto.amount,
-        orderStatus:updateOrderDto.status,
-      }
-    );
-  }
-
 
   remove(id: number) {
-    return this.orderRepository.delete({
-      orderId:id
-    });
+    return this.orderRepository.delete({orderId:id});
   }
 }

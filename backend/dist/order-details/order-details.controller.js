@@ -17,15 +17,17 @@ const common_1 = require("@nestjs/common");
 const order_details_service_1 = require("./order-details.service");
 const create_order_detail_dto_1 = require("./dto/create-order-detail.dto");
 const update_order_detail_dto_1 = require("./dto/update-order-detail.dto");
+const swagger_1 = require("@nestjs/swagger");
+const jwt_guard_1 = require("../auth/jwt.guard");
 let OrderDetailsController = class OrderDetailsController {
     constructor(orderDetailsService) {
         this.orderDetailsService = orderDetailsService;
     }
-    create(createOrderDetailDto) {
-        return this.orderDetailsService.create(createOrderDetailDto);
+    create(req, createOrderDetailDto) {
+        return this.orderDetailsService.create(req.user.userId, req.body.productId, req.body.orderId, createOrderDetailDto);
     }
-    findAll() {
-        return this.orderDetailsService.findAll();
+    findAll(req) {
+        return this.orderDetailsService.findAll(req.user.userId);
     }
     findOne(id) {
         return this.orderDetailsService.findOne(+id);
@@ -38,19 +40,26 @@ let OrderDetailsController = class OrderDetailsController {
     }
 };
 __decorate([
+    swagger_1.ApiNotFoundResponse({ description: 'No data is Created' }),
+    swagger_1.ApiOkResponse({ description: 'OrderDetail Data Created for ID' }),
     common_1.Post(),
-    __param(0, common_1.Body()),
+    __param(0, common_1.Request()), __param(1, common_1.Body()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [create_order_detail_dto_1.CreateOrderDetailDto]),
+    __metadata("design:paramtypes", [Object, create_order_detail_dto_1.CreateOrderDetailDto]),
     __metadata("design:returntype", void 0)
 ], OrderDetailsController.prototype, "create", null);
 __decorate([
+    swagger_1.ApiNotFoundResponse({ description: 'No data is Found' }),
+    swagger_1.ApiOkResponse({ description: 'OrderDetail Data Found' }),
     common_1.Get(),
+    __param(0, common_1.Request()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", []),
+    __metadata("design:paramtypes", [Object]),
     __metadata("design:returntype", void 0)
 ], OrderDetailsController.prototype, "findAll", null);
 __decorate([
+    swagger_1.ApiNotFoundResponse({ description: 'No data is found For ID' }),
+    swagger_1.ApiOkResponse({ description: 'OrderDetail Data Found for ID' }),
     common_1.Get(':id'),
     __param(0, common_1.Param('id')),
     __metadata("design:type", Function),
@@ -58,6 +67,8 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], OrderDetailsController.prototype, "findOne", null);
 __decorate([
+    swagger_1.ApiNotFoundResponse({ description: 'No data is Updated' }),
+    swagger_1.ApiOkResponse({ description: 'OrderDetail Data Updated for ID' }),
     common_1.Patch(':id'),
     __param(0, common_1.Param('id')), __param(1, common_1.Body()),
     __metadata("design:type", Function),
@@ -65,6 +76,8 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], OrderDetailsController.prototype, "update", null);
 __decorate([
+    swagger_1.ApiNotFoundResponse({ description: 'No data is Deleted' }),
+    swagger_1.ApiOkResponse({ description: 'orderDetail Data Deleted for ID' }),
     common_1.Delete(':id'),
     __param(0, common_1.Param('id')),
     __metadata("design:type", Function),
@@ -72,7 +85,9 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], OrderDetailsController.prototype, "remove", null);
 OrderDetailsController = __decorate([
+    swagger_1.ApiTags('OrderDetail'),
     common_1.Controller('order-details'),
+    common_1.UseGuards(jwt_guard_1.JwtAuthGuard),
     __metadata("design:paramtypes", [order_details_service_1.OrderDetailsService])
 ], OrderDetailsController);
 exports.OrderDetailsController = OrderDetailsController;

@@ -21,30 +21,54 @@ const product_service_1 = require("../product/product.service");
 const typeorm_2 = require("typeorm");
 const order_detail_entity_1 = require("./entities/order-detail.entity");
 let OrderDetailsService = class OrderDetailsService {
-    constructor(orderDetailsRepository, userService) {
-        this.orderDetailsRepository = orderDetailsRepository;
+    constructor(orderDetailrepository, userService, orderService, productService) {
+        this.orderDetailrepository = orderDetailrepository;
         this.userService = userService;
+        this.orderService = orderService;
+        this.productService = productService;
     }
-    create(createOrderDetailDto) {
-        return 'This action adds a new orderDetail';
+    async create(userId, productid, orderId, createOrderDetailDto) {
+        const user = await this.userService.findById(userId);
+        const order = await this.orderService.findOne(orderId);
+        const product = await this.productService.findOne(productid);
+        const { Amount, qty } = createOrderDetailDto;
+        return this.orderDetailrepository.save({
+            orderAmount: Amount,
+            orderQty: qty,
+            userId: user,
+            orderId: order,
+            productId: product
+        });
     }
-    findAll() {
-        return `This action returns all orderDetails`;
+    async findAll(userId) {
+        const user = await this.userService.findById(userId);
+        return this.orderDetailrepository.find({ where: { userId: user } });
     }
     findOne(id) {
+        return this.orderDetailrepository.findOne(id).then((data) => {
+            if (!data)
+                throw new common_1.NotFoundException();
+            return data;
+        });
     }
-    update(id, updateOrderDetailDto) {
-        return `This action updates a #${id} orderDetail`;
+    async update(id, updateOrderDetailDto) {
+        return this.orderDetailrepository.update({ orderDetailId: id }, {
+            orderAmount: updateOrderDetailDto.Amount,
+            orderQty: updateOrderDetailDto.qty
+        }).then((data) => {
+            if (!data)
+                throw new common_1.NotFoundException();
+            return data;
+        });
     }
     remove(id) {
-        return `This action removes a #${id} orderDetail`;
+        return this.orderDetailrepository.delete({ orderDetailId: id });
     }
 };
 OrderDetailsService = __decorate([
     common_1.Injectable(),
     __param(0, typeorm_1.InjectRepository(order_detail_entity_1.OrderDetail)),
-    __metadata("design:paramtypes", [typeorm_2.Repository,
-        user_service_1.UserService])
+    __metadata("design:paramtypes", [typeorm_2.Repository, user_service_1.UserService, order_service_1.OrderService, product_service_1.ProductService])
 ], OrderDetailsService);
 exports.OrderDetailsService = OrderDetailsService;
 //# sourceMappingURL=order-details.service.js.map

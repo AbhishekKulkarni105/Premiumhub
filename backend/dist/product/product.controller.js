@@ -53,12 +53,16 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], ProductController.prototype, "create", null);
 __decorate([
+    swagger_1.ApiNotFoundResponse({ description: 'No data is Created...  😿' }),
+    swagger_1.ApiOkResponse({ description: 'Product Data Created... 😺' }),
     common_1.Post('bulk'),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", void 0)
 ], ProductController.prototype, "createBulk", null);
 __decorate([
+    swagger_1.ApiNotFoundResponse({ description: 'No data is found...  😿' }),
+    swagger_1.ApiOkResponse({ description: 'All Product Data found... 😺' }),
     common_1.Get(),
     __param(0, common_1.Query('page')), __param(1, common_1.Query('size')),
     __metadata("design:type", Function),
@@ -66,6 +70,8 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], ProductController.prototype, "findAll", null);
 __decorate([
+    swagger_1.ApiNotFoundResponse({ description: 'No data is found for the specified ID... 😿' }),
+    swagger_1.ApiOkResponse({ description: 'Product Data found... 😺' }),
     common_1.Get('search'),
     __param(0, common_1.Query('q')),
     __metadata("design:type", Function),
@@ -73,8 +79,8 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], ProductController.prototype, "findByQuery", null);
 __decorate([
-    swagger_1.ApiNotFoundResponse({ description: 'No data is found for the specified ID' }),
-    swagger_1.ApiOkResponse({ description: 'Product Data found' }),
+    swagger_1.ApiNotFoundResponse({ description: 'No data is found for the specified ID... 😿' }),
+    swagger_1.ApiOkResponse({ description: 'Product Data found... 😺' }),
     common_1.Get(':id'),
     __param(0, common_1.Param('id')),
     __metadata("design:type", Function),
@@ -82,6 +88,8 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], ProductController.prototype, "findOne", null);
 __decorate([
+    swagger_1.ApiNotFoundResponse({ description: 'No data is Updated...  😿' }),
+    swagger_1.ApiOkResponse({ description: 'Product Data Updated for ID... 😺' }),
     common_1.Patch(':id'),
     __param(0, common_1.Param('id')), __param(1, common_1.Body()),
     __metadata("design:type", Function),
@@ -89,6 +97,8 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], ProductController.prototype, "update", null);
 __decorate([
+    swagger_1.ApiNotFoundResponse({ description: 'No data is Deleted...  😿' }),
+    swagger_1.ApiOkResponse({ description: 'Product Data Deleted for ID... 😺' }),
     common_1.Delete(':id'),
     __param(0, common_1.Param('id')),
     __metadata("design:type", Function),

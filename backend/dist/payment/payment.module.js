@@ -10,12 +10,19 @@ exports.PaymentModule = void 0;
 const common_1 = require("@nestjs/common");
 const payment_service_1 = require("./payment.service");
 const payment_controller_1 = require("./payment.controller");
+const typeorm_1 = require("@nestjs/typeorm");
+const payment_entity_1 = require("./entities/payment.entity");
+const order_entity_1 = require("../order/entities/order.entity");
+const product_entity_1 = require("../product/entities/product.entity");
+const product_service_1 = require("../product/product.service");
+const order_service_1 = require("../order/order.service");
 let PaymentModule = class PaymentModule {
 };
 PaymentModule = __decorate([
     common_1.Module({
+        imports: [typeorm_1.TypeOrmModule.forFeature([payment_entity_1.Payment, product_entity_1.Product, order_entity_1.Order])],
         controllers: [payment_controller_1.PaymentController],
-        providers: [payment_service_1.PaymentService]
+        providers: [payment_service_1.PaymentService, product_service_1.ProductService, order_service_1.OrderService]
     })
 ], PaymentModule);
 exports.PaymentModule = PaymentModule;

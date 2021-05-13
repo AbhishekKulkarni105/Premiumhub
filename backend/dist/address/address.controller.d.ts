@@ -14,7 +14,7 @@ export declare class AddressController {
         user: import("../auth/entities/user.entity").UserEntity;
         createdAt: string;
     } & Address>;
-    findAll(): Promise<Address[]>;
+    findAll(req: any): Promise<Address[]>;
     findOne(id: string): Promise<Address>;
     update(id: string, updateAddressDto: UpdateAddressDto): Promise<import("typeorm").UpdateResult>;
     remove(id: string): Promise<import("typeorm").DeleteResult>;

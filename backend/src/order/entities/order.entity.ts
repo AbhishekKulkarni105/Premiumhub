@@ -1,35 +1,39 @@
-import { UseGuards } from '@nestjs/common';
-import { UserEntity } from 'src/auth/entities/user.entity';
-import { JwtAuthGuard } from 'src/auth/jwt.guard';
-import { JwtStrategy } from 'src/auth/jwt.strategy';
-import { Orderdetail } from 'src/orderdetails/entities/orderdetail.entity';
-import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn, OneToMany } from 'typeorm';
-// import {Orderdetails} from 'src/orderdetails/orderdetails.service';
+import { Product } from './../../product/entities/product.entity';
+import { UserEntity } from "src/auth/entities/user.entity";
+import { OrderDetail } from "src/order-details/entities/order-detail.entity";
+import { Payment } from "src/payment/entities/payment.entity";
+import { Column, Entity, JoinColumn, JoinTable, ManyToOne, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 
-@Entity({name:"orders"})
-@UseGuards(JwtAuthGuard)
-@UseGuards(JwtStrategy)
+@Entity({name:'order'})
 export class Order {
-    @PrimaryGeneratedColumn()
-    orderId:number;
 
-    @Column({default:0,type:'decimal',nullable:false})
-    orderAmount:number;
+    @PrimaryGeneratedColumn({type:'integer'})
+    orderId:number
 
-    @Column({ type: 'datetime',nullable:true,default: ()=>'CURRENT_TIMESTAMP' })
-    orderDate: Date;
+    @Column({type:'decimal',precision:10})
+    orderAmount:number
 
-    @Column({ type: 'datetime',nullable:true })
-    shippingDate: Date;
+    @Column({type:'datetime',default:()=>'CURRENT_TIMESTAMP'})
+    orderDate:Date
 
-    @Column({default:'pending',nullable:false})
+    @Column({type:'date',nullable:true})
+    shippingDate:string;
+
+    @Column({default:'pending'})
     orderStatus:string;
 
-  
-    @OneToMany(() => Orderdetail, (orderdetail) => orderdetail.orderId)
-    orderdetail: Orderdetail[];
-
-    @ManyToOne(()=>UserEntity,(user)=>user.userId)
+    @ManyToOne(()=>UserEntity,(userEntity)=>userEntity.userId)
     @JoinColumn({name:'userId'})
     userId:UserEntity;
+
+    @ManyToOne(()=>Product,(product)=>product.productId)
+    @JoinColumn({name:'productId'})
+    //@JoinTable()
+    productId:Product
+
+    @OneToMany(()=>OrderDetail,(orderDetail)=>orderDetail.orderId)
+    orderDetailId:OrderDetail[];
+
+    @OneToMany(()=>Payment,(payment)=>payment.orderId)
+    paymentId:Payment[];
 }

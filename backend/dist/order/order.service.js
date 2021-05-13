@@ -15,49 +15,47 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.OrderService = void 0;
 const common_1 = require("@nestjs/common");
 const typeorm_1 = require("@nestjs/typeorm");
-const order_entity_1 = require("./entities/order.entity");
-const typeorm_2 = require("typeorm");
-const user_entity_1 = require("../auth/entities/user.entity");
 const user_service_1 = require("../auth/user/user.service");
 const product_service_1 = require("../product/product.service");
+const typeorm_2 = require("typeorm");
+const order_entity_1 = require("./entities/order.entity");
 let OrderService = class OrderService {
-    constructor(orderRepository, userService) {
+    constructor(orderRepository, userService, productService) {
         this.orderRepository = orderRepository;
         this.userService = userService;
+        this.productService = productService;
     }
-    async create(id, createOrderDto) {
-        try {
-            const user = await this.userService.findById(id);
-            return this.orderRepository.save({
-                orderAmount: createOrderDto.amount,
-                orderShippingDate: createOrderDto.OSDate,
-                user: user
-            });
-        }
-        catch (err) {
-            console.log(err);
-        }
+    async create(userId, productId, createOrderDto) {
+        const user = await this.userService.findById(userId);
+        const product = await this.productService.findOne(productId);
+        const { amount, sDate, status } = createOrderDto;
+        return this.orderRepository.save({
+            orderAmount: amount,
+            shippingDate: sDate,
+            orderStatus: status,
+            userId: user,
+            productId: product
+        });
     }
-    findAll() {
-        return this.orderRepository.find();
+    async findAll(userId) {
+        const user = await this.userService.findById(userId);
+        return this.orderRepository.find({ where: { userId: user } });
     }
     findOne(id) {
-        return;
-        this.orderRepository.findOne(id)
-            .then((data) => {
-            console.log(data);
+        return this.orderRepository.findOne(id).then((data) => {
             if (!data)
                 throw new common_1.NotFoundException();
             return data;
         });
     }
-    update(id, updateOrderDto) {
-        return this.orderRepository
-            .update(id, {
+    async update(id, updateOrderDto) {
+        return this.orderRepository.update({ orderId: id }, {
             orderAmount: updateOrderDto.amount,
-            orderShippingDate: updateOrderDto.OSDate,
-        })
-            .then((data) => {
+            shippingDate: updateOrderDto.sDate,
+            orderStatus: updateOrderDto.status,
+        }).then((data) => {
+            if (!data)
+                throw new common_1.NotFoundException();
             return data;
         });
     }
@@ -69,7 +67,7 @@ OrderService = __decorate([
     common_1.Injectable(),
     __param(0, typeorm_1.InjectRepository(order_entity_1.Order)),
     __metadata("design:paramtypes", [typeorm_2.Repository,
-        user_service_1.UserService])
+        user_service_1.UserService, product_service_1.ProductService])
 ], OrderService);
 exports.OrderService = OrderService;
 //# sourceMappingURL=order.service.js.map
