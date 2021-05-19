@@ -4,7 +4,7 @@
     "port": 3306,
     "username": "root",
     "password": "Coolkarni@1698",
-    "database": "ShopDb",
+    "database": "Premium",
     "entities": [
         "dist/**/*.entity{.ts,.js}"
     ],

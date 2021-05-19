@@ -1,48 +1,49 @@
-import { JwtAuthGuard } from 'src/auth/jwt.guard';
-import { ApiNotFoundResponse, ApiOkResponse, ApiTags } from '@nestjs/swagger';
-import { Controller, Get, Post, Body, Patch, Param, Delete, UseGuards, Request } from '@nestjs/common';
-import { PaymentService } from './payment.service';
-import { CreatePaymentDto } from './dto/create-payment.dto';
-import { UpdatePaymentDto } from './dto/update-payment.dto';
+import {
+    Controller,
+    Get,
+    Post,
+    Body,
+    Patch,
+    Param,
+    Delete,
+    Request,
+    UseGuards,
+} from "@nestjs/common";
+import { PaymentService } from "./payment.service";
+import { CreatePaymentDto } from "./dto/create-payment.dto";
+import { UpdatePaymentDto } from "./dto/update-payment.dto";
+import { JwtAuthGuard } from "src/auth/jwt.guard";
 
-@ApiTags('payment')
-@Controller('payment')
+@Controller("payment")
 @UseGuards(JwtAuthGuard)
 export class PaymentController {
-  constructor(private readonly paymentService: PaymentService) {}
+    constructor(private readonly paymentService: PaymentService) {}
 
-  @ApiNotFoundResponse({ description: 'No data is Created...  😿' })
-  @ApiOkResponse({ description: 'Payment Data Created... 😺' })
-  @Post()
-  create(@Request() req:any,@Body() createPaymentDto: CreatePaymentDto) {
-    return this.paymentService.create(req.user.userId,req.body.productId,req.body.orderId,createPaymentDto);
-  }
+    @Post()
+    create(@Request() req: any, @Body() createPaymentDto: CreatePaymentDto) {
+        return this.paymentService.create(createPaymentDto, req.user.userId);
+    }
 
-  @ApiNotFoundResponse({ description: 'No data is Found' })
-  @ApiOkResponse({ description: 'All Payment Data found' })
-  @Get()
-  findAll(@Request() req:any) {
-    return this.paymentService.findAll(req.user.usrId);
-  }
+    @Get()
+    findAll() {
+        return this.paymentService.findAll();
+    }
 
+    @Get(":id")
+    findOne(@Param("id") id: string) {
+        return this.paymentService.findOne(+id);
+    }
 
-  @ApiNotFoundResponse({ description: 'No data is found for ID' })
-  @ApiOkResponse({ description: 'Payment Data found for ID' })
-  @Get(':id')
-  findOne(@Request() req:any,@Param('id') id: string) {
-    return this.paymentService.findOne(+id);
-  }
+    @Patch(":id")
+    update(
+        @Param("id") id: string,
+        @Body() updatePaymentDto: UpdatePaymentDto
+    ) {
+        return this.paymentService.update(+id, updatePaymentDto);
+    }
 
-  @ApiNotFoundResponse({ description: 'No data is Updated' })
-  @ApiOkResponse({ description: 'Payment Data Updated for ID' })
-  @Patch(':id')
-  update(@Param('id') id: string, @Body() updatePaymentDto: UpdatePaymentDto) {
-    return this.paymentService.update(+id, updatePaymentDto);
-  }
-  @ApiNotFoundResponse({ description: 'No data is Deleted' })
-  @ApiOkResponse({ description: 'Payment Data Deleted for ID' })
-  @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.paymentService.remove(+id);
-  }
+    @Delete(":id")
+    remove(@Param("id") id: string) {
+        return this.paymentService.remove(+id);
+    }
 }

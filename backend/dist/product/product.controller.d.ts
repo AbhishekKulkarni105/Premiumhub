@@ -1,6 +1,6 @@
-import { ProductService } from './product.service';
-import { CreateProductDto } from './dto/create-product.dto';
-import { UpdateProductDto } from './dto/update-product.dto';
+import { ProductService } from "./product.service";
+import { CreateProductDto } from "./dto/create-product.dto";
+import { UpdateProductDto } from "./dto/update-product.dto";
 export declare class ProductController {
     private readonly productService;
     constructor(productService: ProductService);
@@ -9,7 +9,7 @@ export declare class ProductController {
         productImage: string;
     } & import("./entities/product.entity").Product>;
     createBulk(): Promise<import("typeorm").InsertResult>;
-    findAll(page?: number, size?: number): Promise<{
+    findAll(page: number, size: number, minPrice: number, maxPrice: number, searchData: string, sortName: string, sortPrice: string): Promise<{
         totalItems: number;
         data: import("./entities/product.entity").Product[];
         currentPage: number;

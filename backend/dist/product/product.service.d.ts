@@ -1,7 +1,7 @@
-import { CreateProductDto } from './dto/create-product.dto';
-import { UpdateProductDto } from './dto/update-product.dto';
-import { Product } from './entities/product.entity';
-import { Repository } from 'typeorm';
+import { CreateProductDto } from "./dto/create-product.dto";
+import { UpdateProductDto } from "./dto/update-product.dto";
+import { Product } from "./entities/product.entity";
+import { Repository } from "typeorm";
 export declare class ProductService {
     private productRepository;
     constructor(productRepository: Repository<Product>);
@@ -9,13 +9,37 @@ export declare class ProductService {
         productName: string;
         productImage: string;
     } & Product>;
-    findAll(page: number, size: number): Promise<{
+    findAllpa(page: number, size: number, minPrice: number, maxPrice: number, searchData: string, sortName: string, sortPrice: string): Promise<{
         totalItems: number;
         data: Product[];
         currentPage: number;
         totalPages: number;
     }>;
-    fingByQuery(query: string): Promise<{
+    findAllpd(page: number, size: number, minPrice: number, maxPrice: number, searchData: string, sortName: string, sortPrice: string): Promise<{
+        totalItems: number;
+        data: Product[];
+        currentPage: number;
+        totalPages: number;
+    }>;
+    findAllna(page: number, size: number, minPrice: number, maxPrice: number, searchData: string, sortName: string, sortPrice: string): Promise<{
+        totalItems: number;
+        data: Product[];
+        currentPage: number;
+        totalPages: number;
+    }>;
+    findAllnd(page: number, size: number, minPrice: number, maxPrice: number, searchData: string, sortName: string, sortPrice: string): Promise<{
+        totalItems: number;
+        data: Product[];
+        currentPage: number;
+        totalPages: number;
+    }>;
+    findAll(page: number, size: number, minPrice: number, maxPrice: number, searchData: string, sortName: string, sortPrice: string): Promise<{
+        totalItems: number;
+        data: Product[];
+        currentPage: number;
+        totalPages: number;
+    }>;
+    findByQuery(query: string): Promise<{
         totalItems: number;
         data: Product[];
     }>;

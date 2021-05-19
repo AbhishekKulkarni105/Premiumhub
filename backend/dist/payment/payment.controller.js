@@ -13,23 +13,22 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.PaymentController = void 0;
-const jwt_guard_1 = require("../auth/jwt.guard");
-const swagger_1 = require("@nestjs/swagger");
 const common_1 = require("@nestjs/common");
 const payment_service_1 = require("./payment.service");
 const create_payment_dto_1 = require("./dto/create-payment.dto");
 const update_payment_dto_1 = require("./dto/update-payment.dto");
+const jwt_guard_1 = require("../auth/jwt.guard");
 let PaymentController = class PaymentController {
     constructor(paymentService) {
         this.paymentService = paymentService;
     }
     create(req, createPaymentDto) {
-        return this.paymentService.create(req.user.userId, req.body.productId, req.body.orderId, createPaymentDto);
+        return this.paymentService.create(createPaymentDto, req.user.userId);
     }
-    findAll(req) {
-        return this.paymentService.findAll(req.user.usrId);
+    findAll() {
+        return this.paymentService.findAll();
     }
-    findOne(req, id) {
+    findOne(id) {
         return this.paymentService.findOne(+id);
     }
     update(id, updatePaymentDto) {
@@ -40,8 +39,6 @@ let PaymentController = class PaymentController {
     }
 };
 __decorate([
-    swagger_1.ApiNotFoundResponse({ description: 'No data is Created...  😿' }),
-    swagger_1.ApiOkResponse({ description: 'Payment Data Created... 😺' }),
     common_1.Post(),
     __param(0, common_1.Request()), __param(1, common_1.Body()),
     __metadata("design:type", Function),
@@ -49,44 +46,35 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], PaymentController.prototype, "create", null);
 __decorate([
-    swagger_1.ApiNotFoundResponse({ description: 'No data is Found' }),
-    swagger_1.ApiOkResponse({ description: 'All Payment Data found' }),
     common_1.Get(),
-    __param(0, common_1.Request()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Object]),
+    __metadata("design:paramtypes", []),
     __metadata("design:returntype", void 0)
 ], PaymentController.prototype, "findAll", null);
 __decorate([
-    swagger_1.ApiNotFoundResponse({ description: 'No data is found for ID' }),
-    swagger_1.ApiOkResponse({ description: 'Payment Data found for ID' }),
-    common_1.Get(':id'),
-    __param(0, common_1.Request()), __param(1, common_1.Param('id')),
+    common_1.Get(":id"),
+    __param(0, common_1.Param("id")),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Object, String]),
+    __metadata("design:paramtypes", [String]),
     __metadata("design:returntype", void 0)
 ], PaymentController.prototype, "findOne", null);
 __decorate([
-    swagger_1.ApiNotFoundResponse({ description: 'No data is Updated' }),
-    swagger_1.ApiOkResponse({ description: 'Payment Data Updated for ID' }),
-    common_1.Patch(':id'),
-    __param(0, common_1.Param('id')), __param(1, common_1.Body()),
+    common_1.Patch(":id"),
+    __param(0, common_1.Param("id")),
+    __param(1, common_1.Body()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [String, update_payment_dto_1.UpdatePaymentDto]),
     __metadata("design:returntype", void 0)
 ], PaymentController.prototype, "update", null);
 __decorate([
-    swagger_1.ApiNotFoundResponse({ description: 'No data is Deleted' }),
-    swagger_1.ApiOkResponse({ description: 'Payment Data Deleted for ID' }),
-    common_1.Delete(':id'),
-    __param(0, common_1.Param('id')),
+    common_1.Delete(":id"),
+    __param(0, common_1.Param("id")),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [String]),
     __metadata("design:returntype", void 0)
 ], PaymentController.prototype, "remove", null);
 PaymentController = __decorate([
-    swagger_1.ApiTags('payment'),
-    common_1.Controller('payment'),
+    common_1.Controller("payment"),
     common_1.UseGuards(jwt_guard_1.JwtAuthGuard),
     __metadata("design:paramtypes", [payment_service_1.PaymentService])
 ], PaymentController);

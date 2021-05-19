@@ -1,1 +1,1 @@
-{"version":3,"file":"update-order.dto.js","sourceRoot":"","sources":["../../../src/order/dto/update-order.dto.ts"],"names":[],"mappings":";;;AAAA,6CAA2D;AAC3D,yDAAoD;AAEpD,MAAa,cAAe,SAAQ,qBAAW,CAAC,iCAAc,CAAC;CAG9D;AAHD,wCAGC"}
+{"version":3,"file":"update-order.dto.js","sourceRoot":"","sources":["../../../src/order/dto/update-order.dto.ts"],"names":[],"mappings":";;;;;;;;;;;;AAAA,6CAA2D;AAC3D,yDAAoD;AAEpD,MAAa,cAAe,SAAQ,qBAAW,CAAC,iCAAc,CAAC;CAI9D;AAFG;IADC,qBAAW,CAAC,EAAE,OAAO,EAAE,OAAO,EAAE,CAAC;;mDACb;AAFzB,wCAIC"}

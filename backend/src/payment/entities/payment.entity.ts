@@ -1,35 +1,30 @@
 import { UserEntity } from "src/auth/entities/user.entity";
+import {
+    Column,
+    Entity,
+    JoinColumn,
+    ManyToOne,
+    PrimaryGeneratedColumn,
+} from "typeorm";
 
-import { Order } from "src/order/entities/order.entity";
-import { Product } from "src/product/entities/product.entity";
-import { Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
-
-@Entity({name:'payment'})
+@Entity({ name: "payment" })
 export class Payment {
-
     @PrimaryGeneratedColumn()
-    paymentId:number
+    paymentId: number;
 
-    @Column({default:'pending'})
-    paymentStatus:string
+    @Column({ nullable: true, precision: 10 })
+    amountPaid: number;
 
-    @Column({default:0,type:'decimal',precision:10})
-    payAmount:number
+    @Column({ nullable: false, default: () => "CURRENT_TIMESTAMP" })
+    paymentDate: Date;
 
-    @Column({type:'date',nullable:true})
-    paymentDate:Date
+    @Column({ nullable: true })
+    paymentMethod: string;
 
-    @ManyToOne(()=>Product,(product)=>product.productId)
-    @JoinColumn({name:'productId'})
-    productId:Product
+    @Column()
+    orderId: number;
 
-    @ManyToOne(()=>Order,(order)=>order.orderId)
-    @JoinColumn({name:'orderId'})
-    orderId:Order;
-
-    @ManyToOne(()=>UserEntity,(userEntity)=>userEntity.userId)
-    @JoinColumn({name:'userId'})
-    userId:UserEntity
-
-
+    @ManyToOne(() => UserEntity, (user) => user.userId)
+    @JoinColumn({ name: "userId" })
+    user: UserEntity;
 }

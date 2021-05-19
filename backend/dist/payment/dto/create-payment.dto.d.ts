@@ -1,8 +1,7 @@
 export declare class CreatePaymentDto {
-    status?: string;
-    Amount: number;
-    Date: Date;
-    userId: string;
-    productId: number;
-    orderId: number;
+    amountPaid: number;
+    paymentDate: Date;
+    paymentMethod?: string;
+    paymentType?: string;
+    user: string;
 }

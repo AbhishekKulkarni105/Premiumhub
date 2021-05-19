@@ -1,8 +1,9 @@
 import axios from "axios";
 import React from "react";
-// import { useHistory } from "react-router";
-import { BrowserRouter, NavLink, Redirect, useHistory } from "react-router-dom";
-import Login from "./Login";
+import {  Redirect} from "react-router-dom";
+import Column from "../components/Column";
+import Row from "../components/Row";
+
 
 type RegisterState = {
     email: any;
@@ -49,18 +50,20 @@ class Register extends React.Component {
 
     render() {
         return (
-            <div className="container register-form">
-                {this.redirecting()}
-                <div className="form">
-                    <div className="note">
-                        <p>Register</p>
-                    </div>
 
-                    <div className="form-content">
+            <Row>
+                <Column size={4}
+                        classes={
+                            "offset-md-4 shadow-sm border p-4 text-center rounded mt-5"
+                        }>
+            <div className=" ">
+                {this.redirecting()}
+                <h2>Register</h2>
+                <hr />
                         <form onSubmit={this.submitting}>
-                            <div className="row">
-                                <div className="col-md-6">
-                                    <div className="form-group">
+                         
+                                <div className="col-md-12">
+                                
                                         <input
                                             type="text"
                                             className="form-control"
@@ -69,8 +72,6 @@ class Register extends React.Component {
                                             value={this.state.name}
                                             onChange={this.change}
                                         />
-                                    </div>
-                                    <div className="form-group">
                                         <input
                                             type="text"
                                             className="form-control"
@@ -79,41 +80,31 @@ class Register extends React.Component {
                                             value={this.state.email}
                                             onChange={this.change}
                                         />
-                                    </div>
-                                </div>
-                                <div className="col-md-6">
-                                    <div className="form-group">
-                                        <input
+                            </div>
+                                <div className="col-md-12"><input
                                             type="password"
                                             className="form-control"
                                             placeholder="Your Password *"
                                             name="password"
                                             value={this.state.password}
-                                            onChange={this.change}
-                                        />
-                                    </div>
-                                    <div className="form-group">
-                                        <input
+                                            onChange={this.change}/>
+                                         <input
                                             type="password"
                                             className="form-control"
                                             placeholder="Confirm Password *"
                                             name="conformpassword"
                                             value={this.state.conformpassword}
-                                            onChange={this.change}
-                                        />
-
+                                            onChange={this.change}/>
                                         {this.state.conformpassword ===
                                         this.state.password ? null : (
                                             <p>Password is not Matching</p>
                                         )}
-                                    </div>
-                                </div>
-                            </div>
-                            <button className="btnSubmit">Submit</button>
+                                </div>         
+                            <button className={"btn btn-success w-100 text-uppercase"}>Submit</button>
                         </form>
-                    </div>
-                </div>
             </div>
+            </Column>
+            </Row>
         );
     }
 }

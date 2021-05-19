@@ -15,7 +15,7 @@ const product_module_1 = require("./product/product.module");
 const auth_module_1 = require("./auth/auth.module");
 const address_module_1 = require("./address/address.module");
 const order_module_1 = require("./order/order.module");
-const order_details_module_1 = require("./order-details/order-details.module");
+const order_detail_module_1 = require("./order-detail/order-detail.module");
 const payment_module_1 = require("./payment/payment.module");
 let AppModule = class AppModule {
 };
@@ -27,7 +27,7 @@ AppModule = __decorate([
             auth_module_1.AuthModule,
             address_module_1.AddressModule,
             order_module_1.OrderModule,
-            order_details_module_1.OrderDetailsModule,
+            order_detail_module_1.OrderDetailModule,
             payment_module_1.PaymentModule,
         ],
         controllers: [

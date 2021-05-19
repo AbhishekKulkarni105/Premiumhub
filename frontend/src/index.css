@@ -63,20 +63,3 @@ main {
   padding-top: 25%;
   opacity: 0.8;
 }
-/* .spinner {
-    margin: 0 auto;
-    height: 64px;
-    width: 64px;
-    animation: rotate 0.8s infinite linear;
-    border: 5px solid red;
-    border-right-color: transparent;
-    border-radius: 50%;
-}
-@keyframes rotate {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
-} */

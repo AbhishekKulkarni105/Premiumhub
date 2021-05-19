@@ -25,20 +25,22 @@ let AddressService = class AddressService {
     }
     async create(uid, createAddressDto) {
         const user = await this.userService.findById(uid);
-        const { city, line1, line2, pincode, state } = createAddressDto;
+        const { city, line1, line2, pincode, state, firstName, lastName, mobileNo, } = createAddressDto;
         return this.addressRepository.save({
+            firstName,
+            lastName,
+            mobileNo,
             city,
             line1,
             line2,
             pincode,
             state,
-            user,
+            user: user,
             createdAt: new Date().toISOString(),
         });
     }
-    async findAll(userId) {
-        const user = await this.userService.findById(userId);
-        return this.addressRepository.find({ where: { user } });
+    findAll() {
+        return this.addressRepository.find({ relations: ["user"] });
     }
     async findOne(id) {
         return this.addressRepository.findOne(id).then((data) => {
@@ -52,6 +54,12 @@ let AddressService = class AddressService {
     }
     remove(id) {
         return this.addressRepository.delete({ id });
+    }
+    async findById(id) {
+        return this.addressRepository.find({
+            where: { user: id },
+            relations: ["user"],
+        });
     }
 };
 AddressService = __decorate([

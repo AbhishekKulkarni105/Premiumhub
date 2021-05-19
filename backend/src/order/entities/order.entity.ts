@@ -1,39 +1,42 @@
-import { Product } from './../../product/entities/product.entity';
+import { Address } from "src/address/entities/address.entity";
 import { UserEntity } from "src/auth/entities/user.entity";
-import { OrderDetail } from "src/order-details/entities/order-detail.entity";
-import { Payment } from "src/payment/entities/payment.entity";
-import { Column, Entity, JoinColumn, JoinTable, ManyToOne, OneToMany, PrimaryGeneratedColumn } from "typeorm";
+import {
+    Column,
+    Entity,
+    JoinColumn,
+    ManyToOne,
+    OneToMany,
+    PrimaryGeneratedColumn,
+} from "typeorm";
 
-@Entity({name:'order'})
+@Entity({ name: "order" })
 export class Order {
+    @PrimaryGeneratedColumn()
+    orderId: number;
 
-    @PrimaryGeneratedColumn({type:'integer'})
-    orderId:number
+    @Column({ nullable: true, precision: 10 })
+    totalAmount: number;
 
-    @Column({type:'decimal',precision:10})
-    orderAmount:number
+    @Column({ nullable: true, default: () => "CURRENT_TIMESTAMP" })
+    orderDate: Date;
 
-    @Column({type:'datetime',default:()=>'CURRENT_TIMESTAMP'})
-    orderDate:Date
+    @Column({ nullable: true, default: () => "CURRENT_TIMESTAMP" })
+    shoppingDate: Date;
 
-    @Column({type:'date',nullable:true})
-    shippingDate:string;
+    @Column({ default: "pending" })
+    status: string;
 
-    @Column({default:'pending'})
-    orderStatus:string;
+    @Column({ length: 10000 })
+    products: string;
 
-    @ManyToOne(()=>UserEntity,(userEntity)=>userEntity.userId)
-    @JoinColumn({name:'userId'})
-    userId:UserEntity;
+    @Column({ default: false, nullable: false })
+    isCancelled: boolean;
 
-    @ManyToOne(()=>Product,(product)=>product.productId)
-    @JoinColumn({name:'productId'})
-    //@JoinTable()
-    productId:Product
+    @ManyToOne(() => UserEntity, (user) => user.userId)
+    @JoinColumn({ name: "userId" })
+    user: UserEntity;
 
-    @OneToMany(()=>OrderDetail,(orderDetail)=>orderDetail.orderId)
-    orderDetailId:OrderDetail[];
-
-    @OneToMany(()=>Payment,(payment)=>payment.orderId)
-    paymentId:Payment[];
+    @OneToMany(() => Address, (address) => address.user)
+    @JoinColumn({ name: "address" })
+    address: Address;
 }

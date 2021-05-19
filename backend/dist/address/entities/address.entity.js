@@ -19,11 +19,23 @@ __decorate([
     __metadata("design:type", Number)
 ], Address.prototype, "id", void 0);
 __decorate([
+    typeorm_1.Column({ nullable: true }),
+    __metadata("design:type", String)
+], Address.prototype, "firstName", void 0);
+__decorate([
+    typeorm_1.Column({ nullable: true }),
+    __metadata("design:type", String)
+], Address.prototype, "lastName", void 0);
+__decorate([
+    typeorm_1.Column({ width: 12, nullable: true }),
+    __metadata("design:type", String)
+], Address.prototype, "mobileNo", void 0);
+__decorate([
     typeorm_1.Column(),
     __metadata("design:type", String)
 ], Address.prototype, "line1", void 0);
 __decorate([
-    typeorm_1.Column(),
+    typeorm_1.Column({ nullable: true }),
     __metadata("design:type", String)
 ], Address.prototype, "line2", void 0);
 __decorate([
@@ -35,11 +47,11 @@ __decorate([
     __metadata("design:type", String)
 ], Address.prototype, "state", void 0);
 __decorate([
-    typeorm_1.Column({ precision: 6 }),
+    typeorm_1.Column({ type: "integer" }),
     __metadata("design:type", Number)
 ], Address.prototype, "pincode", void 0);
 __decorate([
-    typeorm_1.Column({ type: 'datetime' }),
+    typeorm_1.Column({ type: "datetime" }),
     __metadata("design:type", String)
 ], Address.prototype, "createdAt", void 0);
 __decorate([

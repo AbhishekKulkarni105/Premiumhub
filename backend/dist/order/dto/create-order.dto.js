@@ -14,13 +14,25 @@ const swagger_1 = require("@nestjs/swagger");
 class CreateOrderDto {
 }
 __decorate([
-    swagger_1.ApiProperty(),
+    swagger_1.ApiProperty({ example: "order" }),
     __metadata("design:type", Number)
-], CreateOrderDto.prototype, "amount", void 0);
+], CreateOrderDto.prototype, "totalAmount", void 0);
+__decorate([
+    swagger_1.ApiProperty(),
+    __metadata("design:type", Date)
+], CreateOrderDto.prototype, "orderDate", void 0);
+__decorate([
+    swagger_1.ApiProperty(),
+    __metadata("design:type", Date)
+], CreateOrderDto.prototype, "shoppingDate", void 0);
 __decorate([
     swagger_1.ApiProperty(),
     __metadata("design:type", String)
-], CreateOrderDto.prototype, "sDate", void 0);
+], CreateOrderDto.prototype, "products", void 0);
+__decorate([
+    swagger_1.ApiProperty(),
+    __metadata("design:type", String)
+], CreateOrderDto.prototype, "qty", void 0);
 __decorate([
     swagger_1.ApiProperty(),
     __metadata("design:type", String)
@@ -28,10 +40,6 @@ __decorate([
 __decorate([
     swagger_1.ApiProperty(),
     __metadata("design:type", String)
-], CreateOrderDto.prototype, "userId", void 0);
-__decorate([
-    swagger_1.ApiProperty(),
-    __metadata("design:type", Number)
-], CreateOrderDto.prototype, "productId", void 0);
+], CreateOrderDto.prototype, "user", void 0);
 exports.CreateOrderDto = CreateOrderDto;
 //# sourceMappingURL=create-order.dto.js.map

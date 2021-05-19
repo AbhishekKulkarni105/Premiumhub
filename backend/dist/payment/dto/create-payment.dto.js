@@ -14,28 +14,24 @@ const swagger_1 = require("@nestjs/swagger");
 class CreatePaymentDto {
 }
 __decorate([
-    swagger_1.ApiProperty(),
-    __metadata("design:type", String)
-], CreatePaymentDto.prototype, "status", void 0);
-__decorate([
-    swagger_1.ApiProperty(),
+    swagger_1.ApiProperty({ example: "payment" }),
     __metadata("design:type", Number)
-], CreatePaymentDto.prototype, "Amount", void 0);
+], CreatePaymentDto.prototype, "amountPaid", void 0);
 __decorate([
     swagger_1.ApiProperty(),
     __metadata("design:type", Date)
-], CreatePaymentDto.prototype, "Date", void 0);
+], CreatePaymentDto.prototype, "paymentDate", void 0);
 __decorate([
     swagger_1.ApiProperty(),
     __metadata("design:type", String)
-], CreatePaymentDto.prototype, "userId", void 0);
+], CreatePaymentDto.prototype, "paymentMethod", void 0);
 __decorate([
     swagger_1.ApiProperty(),
-    __metadata("design:type", Number)
-], CreatePaymentDto.prototype, "productId", void 0);
+    __metadata("design:type", String)
+], CreatePaymentDto.prototype, "paymentType", void 0);
 __decorate([
     swagger_1.ApiProperty(),
-    __metadata("design:type", Number)
-], CreatePaymentDto.prototype, "orderId", void 0);
+    __metadata("design:type", String)
+], CreatePaymentDto.prototype, "user", void 0);
 exports.CreatePaymentDto = CreatePaymentDto;
 //# sourceMappingURL=create-payment.dto.js.map

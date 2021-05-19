@@ -15,6 +15,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.OrderService = void 0;
 const common_1 = require("@nestjs/common");
 const typeorm_1 = require("@nestjs/typeorm");
+const user_entity_1 = require("../auth/entities/user.entity");
 const user_service_1 = require("../auth/user/user.service");
 const product_service_1 = require("../product/product.service");
 const typeorm_2 = require("typeorm");
@@ -25,49 +26,39 @@ let OrderService = class OrderService {
         this.userService = userService;
         this.productService = productService;
     }
-    async create(userId, productId, createOrderDto) {
+    async create(createOrderDto, userId) {
         const user = await this.userService.findById(userId);
-        const product = await this.productService.findOne(productId);
-        const { amount, sDate, status } = createOrderDto;
         return this.orderRepository.save({
-            orderAmount: amount,
-            shippingDate: sDate,
-            orderStatus: status,
-            userId: user,
-            productId: product
+            totalAmount: createOrderDto.totalAmount,
+            orderDate: createOrderDto.orderDate,
+            shoppingDate: createOrderDto.shoppingDate,
+            products: createOrderDto.products,
+            user: user,
         });
     }
-    async findAll(userId) {
-        const user = await this.userService.findById(userId);
-        return this.orderRepository.find({ where: { userId: user } });
+    findAll() {
+        return this.orderRepository.find({ relations: ["user", "address"] });
     }
-    findOne(id) {
-        return this.orderRepository.findOne(id).then((data) => {
-            if (!data)
-                throw new common_1.NotFoundException();
-            return data;
-        });
+    async findOne(id) {
     }
-    async update(id, updateOrderDto) {
+    update(id, updateOrderDto) {
         return this.orderRepository.update({ orderId: id }, {
-            orderAmount: updateOrderDto.amount,
-            shippingDate: updateOrderDto.sDate,
-            orderStatus: updateOrderDto.status,
-        }).then((data) => {
-            if (!data)
-                throw new common_1.NotFoundException();
-            return data;
+            isCancelled: updateOrderDto.isCancelled,
         });
     }
-    remove(id) {
-        return this.orderRepository.delete({ orderId: id });
+    async findById(id) {
+        return this.orderRepository.find({
+            where: { user: id },
+            relations: ["user", "address"],
+        });
     }
 };
 OrderService = __decorate([
     common_1.Injectable(),
     __param(0, typeorm_1.InjectRepository(order_entity_1.Order)),
     __metadata("design:paramtypes", [typeorm_2.Repository,
-        user_service_1.UserService, product_service_1.ProductService])
+        user_service_1.UserService,
+        product_service_1.ProductService])
 ], OrderService);
 exports.OrderService = OrderService;
 //# sourceMappingURL=order.service.js.map

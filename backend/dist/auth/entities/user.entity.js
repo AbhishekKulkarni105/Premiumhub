@@ -14,15 +14,13 @@ const typeorm_1 = require("typeorm");
 const bcrypt = require("bcrypt");
 const address_entity_1 = require("../../address/entities/address.entity");
 const order_entity_1 = require("../../order/entities/order.entity");
-const order_detail_entity_1 = require("../../order-details/entities/order-detail.entity");
-const payment_entity_1 = require("../../payment/entities/payment.entity");
 let UserEntity = class UserEntity {
     async hashPassword() {
         this.userPassword = await bcrypt.hash(this.userPassword, 10);
     }
 };
 __decorate([
-    typeorm_1.PrimaryGeneratedColumn('uuid'),
+    typeorm_1.PrimaryGeneratedColumn("uuid"),
     __metadata("design:type", String)
 ], UserEntity.prototype, "userId", void 0);
 __decorate([
@@ -38,7 +36,7 @@ __decorate([
     __metadata("design:type", String)
 ], UserEntity.prototype, "userPassword", void 0);
 __decorate([
-    typeorm_1.Column({ type: 'datetime' }),
+    typeorm_1.Column({ type: "datetime" }),
     __metadata("design:type", Date)
 ], UserEntity.prototype, "createdAt", void 0);
 __decorate([
@@ -49,22 +47,16 @@ __decorate([
 ], UserEntity.prototype, "hashPassword", null);
 __decorate([
     typeorm_1.OneToMany(() => address_entity_1.Address, (address) => address.user),
+    typeorm_1.JoinColumn({ name: "address" }),
     __metadata("design:type", Array)
 ], UserEntity.prototype, "address", void 0);
 __decorate([
-    typeorm_1.OneToMany(() => order_entity_1.Order, (order) => order.userId),
+    typeorm_1.OneToMany(() => order_entity_1.Order, (order) => order.user),
+    typeorm_1.JoinColumn({ name: "order" }),
     __metadata("design:type", Array)
-], UserEntity.prototype, "orderId", void 0);
-__decorate([
-    typeorm_1.OneToMany(() => order_detail_entity_1.OrderDetail, (orderDetail) => orderDetail.userId),
-    __metadata("design:type", Array)
-], UserEntity.prototype, "orderDetailId", void 0);
-__decorate([
-    typeorm_1.OneToMany(() => payment_entity_1.Payment, (payment) => payment.userId),
-    __metadata("design:type", Array)
-], UserEntity.prototype, "paymentId", void 0);
+], UserEntity.prototype, "order", void 0);
 UserEntity = __decorate([
-    typeorm_1.Entity({ name: 'user' })
+    typeorm_1.Entity({ name: "user" })
 ], UserEntity);
 exports.UserEntity = UserEntity;
 //# sourceMappingURL=user.entity.js.map

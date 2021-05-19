@@ -13,66 +13,47 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.PaymentService = void 0;
-const user_service_1 = require("../auth/user/user.service");
 const common_1 = require("@nestjs/common");
 const typeorm_1 = require("@nestjs/typeorm");
-const order_entity_1 = require("../order/entities/order.entity");
+const user_service_1 = require("../auth/user/user.service");
 const typeorm_2 = require("typeorm");
 const payment_entity_1 = require("./entities/payment.entity");
-const product_service_1 = require("../product/product.service");
-const order_service_1 = require("../order/order.service");
 let PaymentService = class PaymentService {
-    constructor(paymentRepository, userService, productService, orderService) {
+    constructor(paymentRepository, userService) {
         this.paymentRepository = paymentRepository;
         this.userService = userService;
-        this.productService = productService;
-        this.orderService = orderService;
     }
-    async create(userId, productId, orderId, createPaymentDto) {
+    async create(createPaymentDto, userId) {
         const user = await this.userService.findById(userId);
-        const product = await this.productService.findOne(productId);
-        const order = await this.orderService.findOne(orderId);
-        const { Amount, Date, status } = createPaymentDto;
+        let [data, count] = await this.paymentRepository.findAndCount();
+        console.log(data);
+        console.log(count);
         return this.paymentRepository.save({
-            payAmount: Amount,
-            paymentDate: Date,
-            paymentStatus: status,
-            userId: user,
-            productId: product,
-            orderId: order
+            amountPaid: createPaymentDto.amountPaid,
+            paymentMethod: createPaymentDto.paymentMethod,
+            paymentType: createPaymentDto.paymentType,
+            orderId: count + 1,
+            user: user,
         });
     }
-    async findAll(userId) {
-        const user = await this.userService.findById(userId);
-        return this.paymentRepository.find({ where: { userId: user } });
+    findAll() {
+        return this.paymentRepository.find();
     }
     findOne(id) {
-        return this.paymentRepository.findOne(id).then((data) => {
-            if (!data)
-                throw new common_1.NotFoundException();
-            return data;
-        });
+        return this.paymentRepository.findOne(id);
     }
-    async update(id, updatePaymentDto) {
-        return this.paymentRepository.update({ paymentId: id }, {
-            payAmount: updatePaymentDto.Amount,
-            paymentDate: updatePaymentDto.Date,
-            paymentStatus: updatePaymentDto.status
-        }).then((data) => {
-            if (!data)
-                throw new common_1.NotFoundException();
-            return;
-        });
+    update(id, updatePaymentDto) {
+        return `This action updates a #${id} payment`;
     }
     remove(id) {
-        return this.paymentRepository.delete({ paymentId: id });
+        return `This action removes a #${id} payment`;
     }
 };
 PaymentService = __decorate([
     common_1.Injectable(),
     __param(0, typeorm_1.InjectRepository(payment_entity_1.Payment)),
     __metadata("design:paramtypes", [typeorm_2.Repository,
-        user_service_1.UserService, product_service_1.ProductService, order_service_1.OrderService])
+        user_service_1.UserService])
 ], PaymentService);
 exports.PaymentService = PaymentService;
 //# sourceMappingURL=payment.service.js.map

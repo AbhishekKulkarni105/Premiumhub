@@ -49,13 +49,8 @@ class Login extends React.Component<LoginProps, LoginState> {
         }
         return (
             <LoadingWrapper>
-                <Row>
-                    <Column
-                        size={4}
-                        classes={
-                            "offset-md-4 shadow-sm border p-4 text-center rounded mt-5"
-                        }
-                    >
+                <Row >
+                    <Column size={4}  classes={"offset-md-4 shadow-sm border p-4 text-center rounded mt-5"}>
                         <h2>Login</h2>
                         <hr />
                         <small className="text-danger">
@@ -71,17 +66,11 @@ class Login extends React.Component<LoginProps, LoginState> {
                                 placeholder={"Password"}
                                 type={"password"}
                                 textChange={(password) =>
-                                    this.setState({ password })
-                                }
-                            />
+                                    this.setState({ password }) } />
                             <button
-                                className={
-                                    "btn btn-success w-100 text-uppercase"
-                                }
-                            >
-                                Login
+                                className={"btn btn-success w-100 text-uppercase"} >Login
                             </button>
-                            <NavLink to={"/register"}>Register</NavLink>
+                            <NavLink className= "btn btn-sm btn-outline-primary mx-2" to={"/register"}>Register</NavLink>
                         </form>
                     </Column>
                 </Row>

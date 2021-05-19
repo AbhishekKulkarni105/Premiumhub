@@ -1,4 +1,6 @@
+import { Button } from "@material-ui/core";
 import React from "react";
+import { NavLink } from "react-router-dom";
 import Container from "../components/Container";
 import Logo from "../components/Logo";
 import Menu from "../components/Menu";
@@ -45,7 +47,9 @@ class Header extends React.Component<Props, State> {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <Menu menuData={this.state.menuItems} />
             <SearchBox />
+           
             {this.props.children}
+            
           </div>
         </Container>
       </nav>
