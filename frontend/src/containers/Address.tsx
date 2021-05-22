@@ -177,11 +177,7 @@ class Profile extends React.Component<Props, State> {
             hide: false,
         });
     };
-
-    // uploadFile = (e: any) => {
-    //     alert("Clicked");
-    //     alert(e.file);
-    // };
+ 
 
     render() {
         return (

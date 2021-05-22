@@ -1,9 +1,8 @@
-import { HttpException, Injectable, NotFoundException } from "@nestjs/common";
+import { Injectable, NotFoundException } from "@nestjs/common";
 import { InjectRepository } from "@nestjs/typeorm";
-import { UserEntity } from "src/auth/entities/user.entity";
 import { UserService } from "src/auth/user/user.service";
 import { ProductService } from "src/product/product.service";
-import { getConnection, getRepository, Repository } from "typeorm";
+import { Repository } from "typeorm";
 import { CreateOrderDto } from "./dto/create-order.dto";
 import { UpdateOrderDto } from "./dto/update-order.dto";
 import { Order } from "./entities/order.entity";
@@ -44,13 +43,20 @@ export class OrderService {
         // console.log(a);
     }
 
-    update(id: number, updateOrderDto: UpdateOrderDto) {
-        return this.orderRepository.update(
-            { orderId: id },
-            {
-                isCancelled: updateOrderDto.isCancelled,
-            }
-        );
+    update(id: number, updateOrderDto: UpdateOrderDto, userId: any) {
+        return this.orderRepository
+            .update(
+                { orderId: id, user: userId },
+                {
+                    isCancelled: updateOrderDto.isCancelled,
+                }
+            )
+            .then((data) => {
+                console.log(data);
+            })
+            .catch((error) => {
+                console.log(error);
+            });
     }
 
     //     remove(id: number) {

@@ -15,7 +15,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.OrderService = void 0;
 const common_1 = require("@nestjs/common");
 const typeorm_1 = require("@nestjs/typeorm");
-const user_entity_1 = require("../auth/entities/user.entity");
 const user_service_1 = require("../auth/user/user.service");
 const product_service_1 = require("../product/product.service");
 const typeorm_2 = require("typeorm");
@@ -41,9 +40,16 @@ let OrderService = class OrderService {
     }
     async findOne(id) {
     }
-    update(id, updateOrderDto) {
-        return this.orderRepository.update({ orderId: id }, {
+    update(id, updateOrderDto, userId) {
+        return this.orderRepository
+            .update({ orderId: id, user: userId }, {
             isCancelled: updateOrderDto.isCancelled,
+        })
+            .then((data) => {
+            console.log(data);
+        })
+            .catch((error) => {
+            console.log(error);
         });
     }
     async findById(id) {
